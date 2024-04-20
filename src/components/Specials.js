@@ -1,39 +1,9 @@
 import React from 'react'
 import Button from './Button'
 import Card from './Card'
-import greekSalad from '../assets/img/greek salad.jpg'
-import bruchetta from '../assets/img/bruchetta.svg'
-import lemonDessert from '../assets/img/lemon dessert.jpg'
+import { cardInfo } from '../constants'
 
 function Specials() {
-
-    const cardInfo = [
-        {
-            img: greekSalad,
-            meal: 'Greek Salad',
-            price: '$12.99',
-            details: 'The famous Greek salad of crispy lettuce, peppers, olives\
-             and our Chicago... Our Bruschetta is made from grilled bread that \
-             has been smeared with garlic....'
-        },
-        {
-            img: bruchetta,
-            meal: 'Bruschetta',
-            price: "$12.99",
-            details: 'The famous Greek salad of crispy lettuce, peppers, olives\
-             and our Chicago... Our Bruschetta is made from grilled bread that \
-             has been smeared with garlic....'
-        },
-        {
-            img: lemonDessert,
-            meal: 'Lemon Dessert',
-            price: "$12.99",
-            details: 'The famous Greek salad of crispy lettuce, peppers, olives\
-             and our Chicago... Our Bruschetta is made from grilled bread that \
-             has been smeared with garlic....'
-        }
-    ]
-
     return (
         <section className='specials-section' id='menu'>
             <div className='specials-content'>

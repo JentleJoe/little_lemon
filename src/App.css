@@ -184,10 +184,6 @@ button{
 /* ABOUT SECTION */
 .about-section{
   position: relative;
-  /* background-image: url('./assets/img/Mario\ and\ Adrian\ b.jpg');
-  background-size: 100vw auto;
-  filter: brightness(0.4);
-  background-position: center bottom; */
   margin-left: -150px;
   margin-right: -150px;
 }
@@ -205,4 +201,30 @@ button{
   filter: brightness(0.4);
   background-position: center bottom;
   height: 100vh;
+}
+
+.about-content{
+  margin-left: 150px;
+  font-family: poppins;
+  /* padding-bottom: 80px; */
+}
+.about-heading{
+  padding-top: 115px;
+  color: white;
+  margin: 0;
+  font-size: 74px;
+  font-weight: 700;
+}
+.about-subhead{
+  color: silver;
+  line-height: 50%;
+  margin: 0;
+  font-size: 46px;
+  font-weight: 400;
+  margin-bottom: 80px;
+}
+.about-text{
+  font-size: 21px;
+  max-width: 40%;
+  margin-bottom: 115px;
 }
