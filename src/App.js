@@ -5,7 +5,7 @@ import { Navbar, Hero, Specials, Testimonials, About, Footer, Login } from './co
 function App() {
 
   const [navBg, setNavBg] = useState('nav-transparent')
-  const [login, setlogin] = useState(true)
+  const [login, setLogin] = useState(false)
 
   const setNavStyle = () => {
     // USING THE useEffect Hook:
@@ -13,17 +13,17 @@ function App() {
     // based on Y scroll direction
   }
 
-  const triggerLogin = (prev) => {
-    setlogin(prev == true ? false : true)
+  const triggerLogin = () => {
+    setLogin(prev => !prev)
   }
 
   return (
     <>
       <header className={navBg}>
-        <Navbar setlogin={triggerLogin}/>
+        <Navbar setLogin={triggerLogin}/>
       </header>
       <main>
-        {login && <Login setlogin={triggerLogin} />}
+        {login && <Login setLogin={triggerLogin} />}
         <Hero />
         <Specials />
         <Testimonials />

@@ -39,7 +39,7 @@ body{
 a{
   text-decoration: none;
 }
-.navlinks a{
+.navlinks a, .navlogin{
   color: white;
   margin-right: 10px;
   font-family: poppins, sans-serif;
@@ -50,6 +50,7 @@ a{
 nav .navlogin{
   color: #4DA94D;
   margin-right: 0;
+  cursor: pointer;
 }
 
 button{
@@ -319,6 +320,7 @@ button{
   height: 500px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .close-button{
   position: absolute;
@@ -361,9 +363,6 @@ button{
   width: 230px;
   height: 40px;
   border-radius: 8px;
-}
-.optional-text{
-  
 }
 .google-icon{
   margin-top: 10px;

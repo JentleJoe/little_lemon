@@ -1,12 +1,14 @@
 import React from 'react'
 import google from '../assets/img/google-icon.svg'
+import closeIcon from '../assets/img/close-icon.svg'
+import hamburger from '../assets/img/hamburger-img.png'
 
-const Login = () => {
+const Login = ({setLogin}) => {
   return (
     <div className='login-dialog'>
         <div className='login-container'>
             <div className='login-imgbx'>
-                <img alt='login-img'></img>
+                <img alt='login-img' width={"300"} src={hamburger} />
             </div>
             <div className='form-container'>
                 <h2 className='login-text'>Login</h2>
@@ -29,7 +31,9 @@ const Login = () => {
                 </p>
             </div>
         </div>
-        <div className='close-button'>Close Button</div>
+        <div className='close-button' onClick={setLogin}>
+            <img width={"30"} src={closeIcon} />
+        </div>
     </div>
   )
 }

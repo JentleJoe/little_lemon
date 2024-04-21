@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../assets/img/Logo.svg'
 
-function Navbar() {
+function Navbar({name, setLogin}) {
   return (
     <nav className='navbar'>
       <div>
@@ -14,7 +14,7 @@ function Navbar() {
               <li className='link'><a href="#menu">MENU</a></li>
               <li className='link'><a href="">RESERVATIONS</a></li>
               <li className='link'><a href="">ORDER ONLINE</a></li>
-              <li className='link'><a href="" className='navlogin'>LOGIN</a></li>
+              <li onClick={setLogin} className='link navlogin'>LOGIN</li>
           </ul>
       </div>
     </nav>
