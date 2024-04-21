@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../assets/img/Logo.svg'
 
-function Navbar({name, setLogin}) {
+function Navbar({setLogin}) {
   return (
     <nav className='navbar'>
       <div>
