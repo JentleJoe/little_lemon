@@ -24,7 +24,7 @@ const Login = ({setLogin}) => {
                 </form>
                 <p className='optional-text'>Or continue with</p>
                 <div className='google-icon'>
-                    <img src={google} width={"33"} alt='google-icon' />
+                    <img src={google} width={"28"} alt='google-icon' />
                 </div>
                 <p className='signup-text'>
                     New to little lemon? <span className='signup'>Signup</span>

@@ -313,10 +313,13 @@ button{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  border: 1px solid silver;
+  padding-left: 20px;
+  padding-right: 40px;
   border-radius: 36px;
-  width: 680px;
+  width: 700px;
   height: 500px;
   display: flex;
   justify-content: space-between;
@@ -341,12 +344,12 @@ button{
 } */
 
 .form-container{
+  background-color: #1b1b1b;
   font-family: poppins, sans-serif;
-  color: black;
-  width: 310px;
+  color: white;
+  width: auto;
   height: auto;
-  padding: 20px;
-  border: 2px solid black;
+  padding: 35px;
   border-radius: 20px;
   display: flex;
   height: 420px;
@@ -354,16 +357,24 @@ button{
   justify-content: center;
   align-items: center;
 }
+.login-text{
+  margin-bottom: 10px;;
+}
 .login-form{
   display: flex;
   flex-flow: column;
 }
 .login-input, .form-button{
+  padding: 5px;
+  color: black;
+  font-family: poppins;
+  border: none;
   margin-bottom: 15px;
-  width: 230px;
+  width: 250px;
   height: 40px;
   border-radius: 8px;
 }
+
 .google-icon{
   margin-top: 10px;
   display: flex;
@@ -379,13 +390,13 @@ button{
   cursor: pointer;
   margin-top: -15px;
   margin-bottom: 15px;
-  color: #495E57;
+  color: whitesmoke;
   font-size: 11px;
   display: flex;
   justify-content: end;
 }
 .forgetpwd-bx:hover{
-  color: black;
+  color: white;
   font-weight: 500;
 }
 .signup{
@@ -394,7 +405,7 @@ button{
   color: green;
 }
 .signup:hover{
-  color: black;
+  color: #F4CE14;
   font-weight: 700;
 }
 .form-button:hover{
