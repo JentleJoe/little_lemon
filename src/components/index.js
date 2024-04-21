@@ -5,6 +5,8 @@ import Specials from "./Specials"
 import Card from "./Card";
 import Testimonials from "./Testimonials";
 import About from "./About";
+import Footer from "./Footer";
+import Login from "./Login";
 
 
 export{
@@ -14,5 +16,7 @@ export{
     Specials,
     Card,
     Testimonials,
-    About
+    About,
+    Footer,
+    Login
 }
