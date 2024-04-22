@@ -7,6 +7,7 @@ import Testimonials from "./Testimonials";
 import About from "./About";
 import Footer from "./Footer";
 import Login from "./Login";
+import FeedbackCard from "./FeedbackCard";
 
 
 export{
@@ -18,5 +19,6 @@ export{
     Testimonials,
     About,
     Footer,
-    Login
+    Login,
+    FeedbackCard
 }

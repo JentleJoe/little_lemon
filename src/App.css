@@ -412,3 +412,22 @@ button{
   background-color: #495E57;
   color: white;
 }
+
+/* FEEDBACK CARD STYLES */
+.fb-card{
+  padding: 20px;
+  color: black;
+  font-family: poppins, sans-serif;
+  max-width: 380px;
+  background-color: white;
+  border-radius: 10px;
+}
+.fb-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fb-persona{
+  display: flex;
+  justify-content: start;
+}
