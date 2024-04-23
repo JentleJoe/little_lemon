@@ -415,11 +415,11 @@ button{
 
 /* FEEDBACK CARD STYLES */
 .fb-card{
-  padding: 20px;
-  color: black;
+  padding: 10px 20px 20px 20px;
+  color: white;
   font-family: poppins, sans-serif;
   max-width: 380px;
-  background-color: white;
+  background-color: black;
   border-radius: 10px;
 }
 .fb-header{
@@ -430,4 +430,26 @@ button{
 .fb-persona{
   display: flex;
   justify-content: start;
+}
+.fb-text{
+  font-size: 0.9em;
+  margin-bottom: 20px;
+}
+.fb-date{
+  font-size: 0.9em;
+}
+.fb-imgbx{
+  height: 48px;
+  width: 48px;
+  border-radius: 100%;
+  border: 1px solid black;
+  margin-right: 12px;
+}
+.fbname{
+  font-weight: 700;
+}
+
+/* TESTIMONIALS SECTION */
+.testimonials-section{
+  margin-top: 80px;
 }

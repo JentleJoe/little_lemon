@@ -1,5 +1,6 @@
 import React from 'react'
 import star from '../assets/img/5-Star.png'
+import people from '../assets/img/people03.png'
 
 const FeedbackCard = () => {
   return (
@@ -17,11 +18,11 @@ const FeedbackCard = () => {
         </div>
         <div className='fb-persona'>
             <div className='fb-imgbx'>
-                <img alt='user' />
+                <img alt='user' src={people} />
             </div>
             <div className='user-details'>
-                <div className='user-name'>Ray Robertson</div>
-                <div className='user-about'>CEO Company</div>
+                <div className='fbname'>Ray Robertson</div>
+                <div className='fbabout'>CEO Company</div>
             </div>
         </div>
     </div>
