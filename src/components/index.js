@@ -8,6 +8,8 @@ import About from "./About";
 import Footer from "./Footer";
 import Login from "./Login";
 import FeedbackCard from "./FeedbackCard";
+import Promotion from "./Promotion";
+import Reservations from "./Reservations";
 
 
 export{
@@ -20,5 +22,7 @@ export{
     About,
     Footer,
     Login,
-    FeedbackCard
+    FeedbackCard,
+    Promotion,
+    Reservations
 }

@@ -46,6 +46,9 @@ a{
   font-weight: 600;
   font-size: 18px;
 }
+.navlinks a:hover, .navlogin:hover{
+  color:#F4CE14;
+}
 
 nav .navlogin{
   color: #4DA94D;
@@ -63,6 +66,10 @@ button{
   border-radius: 16px;
   font-size: 18px;
   font-weight: 500;
+}
+button:hover{
+  background-color: #495E57;
+  color: white;
 }
 
 /* HERO STYLES */
@@ -177,6 +184,9 @@ button{
   font-weight: 500;
   color: #F4CE14;
   cursor: pointer;
+}
+.meal-order > p:hover{
+  color: yellow;
 }
 
 /* TESTIMONIALS SECTION */
@@ -419,6 +429,7 @@ button{
   color: white;
   font-family: poppins, sans-serif;
   max-width: 380px;
+  height: 250px;
   background-color: black;
   border-radius: 10px;
 }
@@ -442,7 +453,6 @@ button{
   height: 48px;
   width: 48px;
   border-radius: 100%;
-  border: 1px solid black;
   margin-right: 12px;
 }
 .fbname{
@@ -452,4 +462,42 @@ button{
 /* TESTIMONIALS SECTION */
 .testimonials-section{
   margin-top: 80px;
+  margin-bottom: 80px;
+}
+.testimonials-section h2{
+  color:#F4CE14;
+  display: flex;
+  font-size: 42px;
+  font-family: poppins, sans-serif;
+  justify-content: center;
+  margin-bottom: 150px;
+}
+.fbcards-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* PROMOTION SECTION */
+.promotion-section{
+  height: 50vh;
+  background-image: url(./assets/img/bg-header.png);
+  background-attachment: fixed;
+  background-size: cover;
+  margin-right: -150px;
+  margin-left: -150px;
+  padding: 40px 150px;
+  display: flex;
+  align-items: center;
+}
+.promo-details h2{
+  font-weight: 500;
+  font-family: poppins, sans-serif;
+  font-size: 46px;
+  margin-bottom: 40px;
+}
+.discount{
+  color: #F4CE14;
+}
+.exclam{
+  color: red;
 }

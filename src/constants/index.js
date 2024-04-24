@@ -1,4 +1,6 @@
 import greekSalad from '../assets/img/greek salad.jpg'
+import user1 from '../assets/img/user1.png'
+import people from '../assets/img/people03.png'
 import bruchetta from '../assets/img/bruchetta.svg'
 import lemonDessert from '../assets/img/lemon dessert.jpg'
 
@@ -94,3 +96,33 @@ export const footerLinks = [
       ],
     },
   ];
+
+  export const userReview = [
+    {
+      img: user1,
+      date: "10th March, 2024",
+      review: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+       Ut enim ad minim veniam, quis nostrud`,
+       name: "Dora Osagie",
+       bio: "Lawyer | Content Writer"
+    },
+    {
+      img: user1,
+      date: "10th March, 2024",
+      review: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+       Ut enim ad minim veniam, quis nostrud`,
+       name: "Dora Osagie",
+       bio: "CEO Company"
+    },
+    {
+      img: people,
+      date: "10th March, 2024",
+      review: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+       Ut enim ad minim veniam, quis nostrud`,
+       name: "Dora Osagie",
+       bio: "CEO Company"
+    },
+  ]

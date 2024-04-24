@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-import { Navbar, Hero, Specials, Testimonials, About, Footer, Login } from './components';
+import { Navbar, Hero, Specials, Testimonials, About, Footer, Login, Promotion, Reservations } from './components';
 
 function App() {
 
@@ -26,8 +26,10 @@ function App() {
         {login && <Login setLogin={triggerLogin} />}
         <Hero />
         <Specials />
-        <Testimonials />
+        <Promotion />
         <About />
+        <Testimonials />
+        <Reservations />
       </main>
       <footer>
         <Footer />

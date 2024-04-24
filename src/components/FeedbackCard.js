@@ -1,28 +1,23 @@
 import React from 'react'
 import star from '../assets/img/5-Star.png'
-import people from '../assets/img/people03.png'
 
-const FeedbackCard = () => {
+const FeedbackCard = ({img, date, review, name, bio}) => {
   return (
     <div className='fb-card'>
         <div className='fb-header'>
             <div className='star-imgbx'>
                 <img src={star} className='star' width={"100"}/>
             </div>
-            <div className='fb-date'>10th March, 2024</div>
+            <div className='fb-date'>{date}</div>
         </div>
-        <div className='fb-text'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-             Ut enim ad minim veniam, quis nostrud
-        </div>
+        <div className='fb-text'>{review}</div>
         <div className='fb-persona'>
             <div className='fb-imgbx'>
-                <img alt='user' src={people} />
+                <img alt='user' src={img} />
             </div>
             <div className='user-details'>
-                <div className='fbname'>Ray Robertson</div>
-                <div className='fbabout'>CEO Company</div>
+                <div className='fbname'>{name}</div>
+                <div className='fbabout'>{bio}</div>
             </div>
         </div>
     </div>
