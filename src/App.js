@@ -10,22 +10,22 @@ function App() {
   const [scrollDirection, setScrollDirection] = useState("")
 
     // Handle Nav display on scroll direction
+  console.log("scroll Direction", scrollDirection)
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY
-      if (currentScrollPos > 50 && currentScrollPos > prevScrollPos){
+      if (currentScrollPos > 300 && currentScrollPos > prevScrollPos){
         setScrollDirection("down")
       }else if(currentScrollPos > 50 && currentScrollPos < prevScrollPos){
         setScrollDirection("up")
       }
-
-      console.log(scrollDirection)
-
-      window.addEventListener('scroll', handleScroll)
-
-      return () => window.removeEventListener('scroll', handleScroll)
+      setPrevScrollPos(currentScrollPos)
     }
-  }, [])
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [prevScrollPos])
 
   // Handle Nav Background Color
   useEffect(() => {

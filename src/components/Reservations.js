@@ -51,8 +51,26 @@ const Reservations = () => {
                 </div>
                 <Button text="Confirm Order" />
             </form>
-            <div className='rsrv-imgbx'>
-                {/* <img src={''} alt='tables' /> */}
+            <div className='open-details'>
+                <h3 className='open-head'>OPENING HOURS</h3>
+                <div className='open-text'>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Et, inventore hic nulla, provident laudantium voluptate
+                    ipsa eligendi commodi mollitia vero animi, repudiandae
+                    quidem minima est sint sapiente quas iure deleniti.
+                </div>
+                <div className='open-days'>
+                    <p className='day'>Monday - Friday</p>
+                    <p className='time'>8AM - 10AM</p>
+                </div>
+                <div className='open-days'>
+                    <p className='day'>Saturday</p>
+                    <p className='time'>9AM - 5PM</p>
+                </div>
+                <div className='open-days'>
+                    <p className='day'>Sunday</p>
+                    <p className='time'>12PM - 6PM</p>
+                </div>
             </div>
         </div>
     </section>
