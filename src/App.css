@@ -9,7 +9,7 @@
 body{
   width: 100vw;
   max-width: 1700px;
-  overflow: hidden;
+  overflow-x: hidden;
   margin-left: auto;
   margin-right: auto;
   scroll-behavior: smooth;
@@ -24,6 +24,7 @@ body{
 
 /* NAVBAR STYLES */
 header{
+  z-index: 100;
   width: 100vw;
   max-width: 1700px;
   overflow: hidden;
@@ -41,7 +42,7 @@ header{
   background-color: transparent;
 }
 .nav-dark{
-  background-color: dark;
+  background-color: black;
 }
 .navbar{
   height: 60px;

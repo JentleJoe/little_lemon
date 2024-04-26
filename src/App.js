@@ -1,17 +1,48 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Navbar, Hero, Specials, Testimonials, About, Footer, Login, Promotion, Reservations } from './components';
 
 function App() {
 
-  const [navBg, setNavBg] = useState('nav-transparent')
+  const [navBg, setNavBg] = useState('')
   const [login, setLogin] = useState(false)
+  const [prevScrollPos, setPrevScrollPos] = useState(0)
+  const [scrollDirection, setScrollDirection] = useState("")
 
-  const setNavStyle = () => {
-    // USING THE useEffect Hook:
-    // set navStyle to either nav-trasparent or nav-dark
-    // based on Y scroll direction
-  }
+    // Handle Nav display on scroll direction
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY
+      if (currentScrollPos > 50 && currentScrollPos > prevScrollPos){
+        setScrollDirection("down")
+      }else if(currentScrollPos > 50 && currentScrollPos < prevScrollPos){
+        setScrollDirection("up")
+      }
+
+      console.log(scrollDirection)
+
+      window.addEventListener('scroll', handleScroll)
+
+      return () => window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  // Handle Nav Background Color
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY
+
+      if (currentScrollPos > 50){
+        setNavBg('nav-dark')
+      } else {
+        setNavBg('nav-transparent')
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const triggerLogin = () => {
     setLogin(prev => !prev)
@@ -19,7 +50,7 @@ function App() {
 
   return (
     <>
-      <header className={navBg}>
+      <header className={`${navBg} ${scrollDirection}`}>
         <Navbar setLogin={triggerLogin}/>
       </header>
       <main>
