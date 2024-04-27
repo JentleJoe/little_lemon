@@ -10,7 +10,6 @@ function App() {
   const [scrollDirection, setScrollDirection] = useState("")
 
     // Handle Nav display on scroll direction
-  console.log("scroll Direction", scrollDirection)
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY

@@ -5,8 +5,10 @@ function Hero() {
   return (
     <div className='hero-section' id='home'>
         <div className='hero-content'>
+          <div className='headingbx'>
             <h1 className='heading'>Little Lemon</h1>
             <h3 className='sub-heading'>Chicago</h3>
+          </div>
             <p className='heading-text'>
                 Lorem ipsum dolor sit amet, consectetur
                 adipiscing elit, sed do eiusmod tempor

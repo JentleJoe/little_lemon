@@ -6,10 +6,10 @@ function Footer() {
   return (
     <section className="footer-section">
         <div className='footer-content' >
+            <div className="footerlink-container">
             <div className="footer-imgbx">
                 <img className='footer-img' src={restaurant} alt="logo" />
             </div>
-            <div className="footerlink-container">
             {
                 footerLinks.map((content) => {
                 return(
@@ -17,7 +17,7 @@ function Footer() {
                     <p className="footlink-head">
                         {content.title}
                     </p>
-                    <div>
+                    <div className='footlink-body'>
                         {
                         content.links.map((item, index) => {
                             return(

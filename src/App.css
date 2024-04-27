@@ -4,11 +4,13 @@
   scroll-behavior: smooth;
   margin: 0;
   box-sizing: border-box;
+  /* overflow-x: hidden; */
 }
 
 body{
+  display: flex;
   width: 100vw;
-  max-width: 1700px;
+  max-width: 1650px;
   overflow-x: hidden;
   margin-left: auto;
   margin-right: auto;
@@ -38,6 +40,7 @@ header{
   /* margin-left: -150px; */
   width: 100%;
 }
+
 .nav-transparent{
   background-color: transparent;
 }
@@ -96,6 +99,8 @@ button:hover{
 
 /* HERO STYLES */
 .hero-section{
+  display: flex;
+  /* flex-shrink: 1; */
   /* height: 100vh; */
   background-image: url(./assets/img/bg-header.png);
   background-attachment: fixed;
@@ -103,14 +108,14 @@ button:hover{
   margin-left: -150px;
   margin-right: -150px;
 }
-@media(max-width: 1700px){
-  .hero-section{
-    height: 100vh;
-  }
-}
+
 
 .hero-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-left: 150px;
+  margin-right: 150px;
   font-family: poppins, sans-serif;
   padding-bottom: 80px;
 }
@@ -218,7 +223,7 @@ button:hover{
 
 /* TESTIMONIALS SECTION */
 .testimonials-section{
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 /* ABOUT SECTION */
@@ -391,10 +396,15 @@ button:hover{
   padding: 10px 20px 20px 20px;
   color: white;
   font-family: poppins, sans-serif;
-  max-width: 380px;
+  width: 380px;
   background-color: black;
   border-radius: 10px;
+  margin-bottom: 50px;
 }
+.fb-card:not(:last-child){
+  margin-right: 25px;
+}
+
 .fb-header{
   display: flex;
   justify-content: space-between;
@@ -429,9 +439,9 @@ button:hover{
 
 /* TESTIMONIALS SECTION */
 .testimonials-section{
-  height: min(100vh, 850px);
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 150px;
+  padding-right: 0;
 }
 
 .testimonials-section h2{
@@ -444,10 +454,27 @@ button:hover{
 }
 .fbcards-container{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 150px;
 }
-
+@media(max-width: 1400px){
+  .fbcards-container{
+    justify-content: center;
+  }
+  .fb-card:nth-child(2){
+    margin-right: 0;
+  }
+}
+@media(max-width: 960px){
+  .fb-card:nth-child(2){
+    margin-right: 25px;
+  }
+}
+@media(max-width: 918px){
+  .fb-card:not(:last-child){
+    margin-right: 0;
+  }
+}
 /* PROMOTION SECTION */
 .promotion-section{
   height: 420px;
@@ -490,6 +517,7 @@ button:hover{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 100%;
 }
 .rsrv-form{
@@ -556,16 +584,19 @@ option{
 
 /* FOOTER STYLES */
 .footer-content{
+  border: 1px solid white;
   width: 100%;
   display: flex;
-  padding-bottom: 40px;
-  padding-top: 40px;
+  padding: 40px 0;
+  /* padding-bottom: 40px;
+  padding-top: 40px; */
   justify-content: space-between;
   flex-wrap: wrap;
 }
 .footer-imgbx{
+  border: 1px solid white;
+  margin: 0;
   margin-top: 24px;
-  margin-left: 1.5rem;
   width: 140px;
   height: 270px;
 }
@@ -574,6 +605,8 @@ option{
 }
 
 .footerlink-container{
+  margin-left: 0;
+  border: 1px solid white;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -581,8 +614,8 @@ option{
 }
 .footerlink-bx{
   /* margin-top: 24px; */
+  border: 2px solid blue;
   margin-bottom: 24px;
-  margin-left: 24px;
 }
 .footlink-head{
   color: #F4CE14;
@@ -590,6 +623,9 @@ option{
   font-weight: 700;
   font-size: 18px;
   margin-bottom: 24px;
+}
+.footlink-body{
+  border: 2px solid red;
 }
 .footlink-text{
   color: rgba(255, 255, 255, 0.8);
@@ -601,18 +637,57 @@ option{
 
 @media(min-width: 1200px){
   .footer-imgbx{
-    margin-left: 0px;
+    margin-left: 0;
   }
   .footerlink-container{
-    width: 70%;
     margin-top: 0px;
   }
   .footer-text{
     margin-right: 32px;
   }
 }
-@media(min-width: 1700px){
-  .footerlink-container{
-    width: 60%;
+
+
+/* MEDIA QUERIES */
+@media(max-width: 1650px){
+  .hero-section{
+    height: min(100vh, 900px);
+  }
+}
+@media(max-width: 1440px){
+  body, header{
+    padding-right: 120px;
+    padding-left: 120px;
+  }
+  .hero-section{
+    height: min(100vh, 800px);
+  }
+  .about-section, .promotion-section, .hero-section, .specials-section{
+    margin-left: -120px;
+    margin-right: -120px;
+  }
+  .hero-content, .specials-content{
+    margin-left: 120px;
+    margin-right: 120px;
+  }
+  .promotion-section{
+    padding: 40px 120px;
+  }
+}
+@media(max-width: 1200px){
+  body, header{
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+  .about-section, .promotion-section, .hero-section, .specials-section{
+    margin-left: -80px;
+    margin-right: -80px;
+  }
+  .hero-content, .specials-content{
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+  .promotion-section{
+    padding: 40px 80px;
   }
 }
