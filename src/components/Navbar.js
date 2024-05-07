@@ -1,20 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../assets/img/Logo.svg'
 
-function Navbar({setLogin}) {
+function Navbar({setLogin, navBg, scrollDirection}) {
+
+  // const [display,setDisplay] = useState('')
+
+  // const updateDisplay = () =>  {
+  //   setDisplay(() => {
+  //     display === '' ? "mobile" : ''
+  //   })
+  // }
   return (
-    <nav className='navbar'>
+    <nav className={`${navBg} ${scrollDirection} navbar`}>
       <div>
           <img alt='logo' width={"150"} src={logo}/>
       </div>
       <div>
           <ul className='navlinks'>
-              <li className='link'><a href="#home">HOME</a></li>
-              <li className='link'><a href="">ABOUT</a></li>
-              <li className='link'><a href="#menu">MENU</a></li>
-              <li className='link'><a href="">RESERVATIONS</a></li>
-              <li className='link'><a href="">ORDER ONLINE</a></li>
-              <li onClick={setLogin} className='link navlogin'>LOGIN</li>
+              <li className='mobile'><a href="#about">ABOUT</a></li>
+              <li className='mobile'><a href="#home">HOME</a></li>
+              <li className='mobile'><a href="#menu">MENU</a></li>
+              <li className='mobile'><a href="">RESERVATIONS</a></li>
+              <li className='mobile'><a href="">ORDER ONLINE</a></li>
+              <li onClick={setLogin} className='mobile navlogin'>LOGIN</li>
           </ul>
       </div>
     </nav>

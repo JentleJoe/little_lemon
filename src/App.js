@@ -9,7 +9,7 @@ function App() {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [scrollDirection, setScrollDirection] = useState("")
 
-    // Handle Nav display on scroll direction
+  // Handle Nav display on scroll direction
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY
@@ -50,7 +50,7 @@ function App() {
   return (
     <>
       <header className={`${navBg} ${scrollDirection}`}>
-        <Navbar setLogin={triggerLogin}/>
+        <Navbar setLogin={triggerLogin} navBg={navBg} scrollDirection={scrollDirection} />
       </header>
       <main>
         {login && <Login setLogin={triggerLogin} />}
