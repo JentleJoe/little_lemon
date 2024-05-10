@@ -10,9 +10,8 @@ function Hero() {
             <h3 className='sub-heading'>Chicago</h3>
           </div>
             <p className='heading-text'>
-                Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua.
+              Little Lemon restaurant has a rustic and relaxed atmosphere with
+              moderate prices, making it a popular place for a meal any time of the day.
             </p>
             <Button text={"Reserve Table"} />
         </div>

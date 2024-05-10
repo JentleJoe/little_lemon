@@ -10,13 +10,16 @@ function About() {
           <h4 className='about-heading'>Welcome to Little Lemon Restaurant</h4>
           <h3 className='about-subhead'>Traditional Chicago Food  To Delight The Whole Family</h3>
           <p className='about-body'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip commodo.
+            Based in Chicago, Illinois, Little Lemon is a family-owned Mediterranean restaurant,
+            focused on traditional recipes served with a modern twist.
+            Our chefs draw inspiration from Italian, Greek, and Turkish culture and have a menu
+            of 12–15 dishes rotated seasonally.
             <br /><br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip commodo.
+            Little Lemon is owned by two Italian brothers, Mario and Adrian,
+            who moved to the United States to establish their unique restaurant.
+            Mario strives on his experience as a lead chef in one of the biggest
+            restaurants in Italy. Little Lemon goes beyond classic Italian and incorporates
+            additional cuisines from the Mediterranean region.
           </p>
           <a href='#home'><Button text={"Learn More"} /></a>
         </div>

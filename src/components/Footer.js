@@ -1,6 +1,7 @@
 import React from 'react'
 import {footerLinks} from '../constants'
 import restaurant from '../assets/img/restauranfood.jpg'
+import hamburger from '../assets/img/hamburger-img.png'
 
 function Footer() {
   return (
@@ -8,7 +9,7 @@ function Footer() {
         <div className='footer-content' >
             <div className="footerlink-container">
             <div className="footer-imgbx">
-                <img className='footer-img' src={restaurant} alt="logo" />
+                <img className='footer-img' src={hamburger} alt="logo" />
             </div>
             {
                 footerLinks.map((content) => {

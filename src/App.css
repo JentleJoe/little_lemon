@@ -87,7 +87,7 @@ button{
   cursor: pointer;
   border: none;
   width: 180px;
-  height: 50px;
+  min-height: 50px;
   background-color: #F4CE14;
   border-radius: 10px;
   font-size: 18px;
@@ -536,8 +536,24 @@ button:hover{
 
 /* RESERVATION SECTION */
 .reservations{
+  position: relative;
   padding-top: 80px;
   margin-bottom: 150px;
+}
+.reservations::before{
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-image: url(./assets/img/restaurant.jpg);
+  background-size: cover;
+  filter: brightness(0.2);
+  z-index: -1;
+  margin-left: -150px;
+  margin-right: -150px;
+  margin-bottom: -150px;
 }
 .reservations h2{
   color:#F4CE14;
@@ -548,7 +564,7 @@ button:hover{
   margin-bottom: 100px;
 }
 .rsrv-container{
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -556,7 +572,7 @@ button:hover{
   width: 100%;
 }
 .rsrv-form{
-  border: 1px solid green;
+  /* border: 1px solid green; */
   padding: auto;
   width: 50%;
   max-width: 545px;
@@ -567,10 +583,10 @@ button:hover{
   height: 100%;
 }
 .rsvform-container{
-  border: 2px solid white;
+  /* border: 2px solid white; */
 }
 .rsrv-button{
-  border: 2px solid white;
+  /* border: 2px solid white; */
   /* margin-top: 40px; */
 }
 .rsv-input{
@@ -582,28 +598,30 @@ button:hover{
 }
 .rsv-input label{
   font-family: poppins, sans-serif;
+  font-weight: 500;
   font-size: 1.2em;
   margin-right: 30px;
 }
 .rsrv-form select, .rsrv-form input{
   /* display: flex; */
   /* margin-bottom: 20px; */
-  color: white;
+  color: black;
   padding: 10px;
   font-family: poppins;
+  font-weight: 500;
   border: none;
   font-size: 1rem;
   width: 300px;
   min-width: 250px;
   height: 55px;
   border-radius: 10px;
-  background-color: black;
+  background-color: white;
 }
 
 option{
-  background-color: black;
+  /* background-color: black; */
   margin: 20px;
-  color: white;
+  color: black;
 }
 .open-details{
   flex: 1;
@@ -662,22 +680,42 @@ option{
 }
 
 /* FOOTER STYLES */
+.footer-section{
+  position: relative;
+}
+.footer-section::before{
+  background-image: url(./assets/img/pizza-bg.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  margin-right: -150px;
+  margin-left: -150px;
+  padding-left: 150px;
+  padding-right: 150px;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: brightness(0.05);
+  z-index: -1;
+}
 .footer-content{
-  border: 1px solid white;
+  /* border: 1px solid white; */
   width: 100%;
   display: flex;
   padding: 40px 0;
   /* padding-bottom: 40px;
   padding-top: 40px; */
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
 }
 .footer-imgbx{
-  border: 1px solid white;
+  /* border: 1px solid white; */
   margin: 0;
   margin-top: 24px;
-  width: 140px;
-  height: 270px;
+  width: 250px;
 }
 .footer-img{
   width: 100%;
@@ -685,7 +723,7 @@ option{
 
 .footerlink-container{
   margin-left: 0;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -693,7 +731,7 @@ option{
 }
 .footerlink-bx{
   /* margin-top: 24px; */
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   margin-bottom: 24px;
 }
 .footlink-head{
@@ -704,7 +742,7 @@ option{
   margin-bottom: 24px;
 }
 .footlink-body{
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 .footlink-text{
   color: rgba(255, 255, 255, 0.8);
@@ -787,12 +825,19 @@ option{
   }
 }
 @media(max-width: 1024px){
+  /* .navbar{
+    display: none;
+  } */
+  .link-container{
+    display: none;
+  }
   body, .navbar{
     padding-right: 80px;
     padding-left: 80px;
   }
   .heading-text{
-    width: 50%;
+    max-width: 60%;
+    margin-bottom: 50px;
   }
   .hero-section{
     background-size: 1024px cover; /* width height */
@@ -805,6 +850,6 @@ option{
     padding-left: 50px;
   }
   .heading-text{
-    width: 60%;
+    width: 100%;
   }
 }

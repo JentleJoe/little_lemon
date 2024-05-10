@@ -58,10 +58,11 @@ const Reservations = () => {
             <div className='open-details'>
                 <h3 className='open-head'>OPENING HOURS</h3>
                 <div className='open-text'>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Et, inventore hic nulla, provident laudantium voluptate
-                    ipsa eligendi commodi mollitia vero animi, repudiandae
-                    quidem minima est sint sapiente quas iure deleniti.
+                    Little lemon restaurant works round the clock as
+                    we strive to always be there for our customers. <br/>
+                    We operate from 8am to 10pm on the weekdays, on Saturdays
+                    we are open from 9am to 5pm and on Sundays from
+                    12noon till 6pm.
                 </div>
                 <div className='open-days'>
                     <p className='day'>Monday - Friday</p>
