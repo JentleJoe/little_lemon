@@ -319,6 +319,7 @@ button:hover{
   z-index: 1000;
 }
 /* add a minimum width to the below style */
+
 .login-container{
   position: absolute;
   top: 50%;
@@ -330,11 +331,16 @@ button:hover{
   padding-left: 20px;
   padding-right: 40px;
   border-radius: 36px;
-  width: 700px;
-  height: 500px;
+  width: 350px;
+  height: 250px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: width 0.5s ease-out, height 0.5s ease-out;
+}
+.login-container.zoomed{
+  width: 700px;
+  height: 500px;
 }
 .close-button{
   position: absolute;
