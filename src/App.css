@@ -43,6 +43,9 @@ body{
   align-items: center;
   justify-content: space-between;
 }
+.mobile-nav{
+  display: none
+}
 
 .nav-transparent{
   background-color: transparent;
@@ -82,7 +85,7 @@ nav .navlogin{
   cursor: pointer;
 }
 
-button{
+#button{
   font-family: poppins, sans-serif;
   cursor: pointer;
   border: none;
@@ -93,7 +96,7 @@ button{
   font-size: 18px;
   font-weight: 500;
 }
-button:hover{
+#button:hover{
   background-color: #495E57;
   color: white;
 }
@@ -364,44 +367,110 @@ button:hover{
   background-color: #1b1b1b;
   font-family: poppins, sans-serif;
   color: white;
-  width: auto;
-  height: auto;
+  width: 200px;
   padding: 35px;
   border-radius: 20px;
   display: flex;
-  height: 420px;
+  height: 210px;
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  transition: width 0.5s ease-out, height 0.5s ease-out;
+}
+.form-container.zoomed{
+  width: auto;
+  height: 420px;
+}
+.login-imgbx{
+  width: 150px;
+  object-fit: contain;
+  transition: width 0.5s ease-out, height 0.5s ease-out;
+}
+.login-imgbx img{
+  width: 100%;
+}
+.login-imgbx.zoomed{
+  width: 300px;
 }
 .login-text{
-  margin-bottom: 10px;;
+  margin-bottom: 10px;
+  font-size: xx-small;
+  transition: font-size 0.25s ease-out 0.3s;
 }
+.login-text.zoomed{
+  font-size: 1.5em;
+}
+.signup-text, .signup{
+  margin-bottom: 10px;
+  font-size: xx-small;
+  transition: font-size 0.5s ease-out 0.3s;
+}
+.signup-text.zoomed, .signup.zoomed{
+  font-size: medium;
+}
+
 .login-form{
   display: flex;
   flex-flow: column;
 }
+
+.form-button{
+  font-family: poppins, sans-serif;
+  cursor: pointer;
+  border: none;
+  width: 180px;
+  min-height: 50px;
+  background-color: #F4CE14;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.form-button:hover{
+  background-color: #495E57;
+  color: white;
+}
+
 .login-input, .form-button{
   padding: 5px;
   color: black;
   font-family: poppins;
   border: none;
-  margin-bottom: 15px;
+  margin-bottom: 0;
+  width: 125px;
+  height: 20px;
+  border-radius: 8px;
+  transition: width 0.5s ease-out, height 0.5s ease-out;
+}
+.login-input.zoomed, .form-button.zoomed{
   width: 250px;
   height: 40px;
-  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.optional-text{
+  font-size: xx-small;
+  transition: font-size 0.5s ease-out;
+}
+.optional-text.zoomed{
+  font-size: medium;
 }
 
 .google-icon{
+  width: 10px;
+  object-fit: contain;
   margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   margin-bottom: 20px;
+  transition: width 0.5s ease-out 0.2s;
 }
-.signup-text{
-  font-weight: 500;
+.google-icon.zoomed{
+  width: 28px;
+}
+.google-icon img{
+  width: 100%;
 }
 .forgetpwd-bx{
   cursor: pointer;
@@ -836,6 +905,28 @@ option{
   } */
   .link-container{
     display: none;
+  }
+  .mobile-nav{
+    position: absolute;
+    display: block;
+    border: 2px solid white;
+    right: 0;
+    top: 0;
+  }
+  nav.mobile{
+    height: auto;
+  }
+  .hamlink-container{
+  
+  }
+  .hamicon{
+    width: 40px;
+  }
+  .hamicon img{
+    width: 100%;
+  }
+  .hamlink-container{
+
   }
   body, .navbar{
     padding-right: 80px;

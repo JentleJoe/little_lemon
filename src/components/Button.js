@@ -2,7 +2,7 @@ import React from 'react'
 
 function Button({text}) {
   return (
-    <button>
+    <button id='button'>
         {text}
     </button>
   )
