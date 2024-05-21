@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import logo from '../assets/img/Logo.svg'
-import hamburger from '../assets/img/hamburger-img.png'
 import closeIcon from '../assets/img/close-icon.svg'
+import ham_icon from '../assets/img/hamburger-img.png'
 
 function Navbar({setLogin, navBg, scrollDirection}) {
 
@@ -31,16 +31,16 @@ function Navbar({setLogin, navBg, scrollDirection}) {
                 <li><a href="#about">ABOUT</a></li>
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#menu">MENU</a></li>
-                <li><a href="">RESERVATIONS</a></li>
-                <li><a href="">ORDER ONLINE</a></li>
+                <li><a href="#reservations">RESERVATIONS</a></li>
+                <li><a href="#reservations">ORDER ONLINE</a></li>
                 <li onClick={setLogin} className='mobile navlogin'>LOGIN</li>
             </ul>
         </div>
+        <div className='hamicon' onClick={toggleIcon}>
+          <img src={hamIcon === 'hamburger'? ham_icon : closeIcon} alt='ham-icon' />
+        </div>
       </div>
       { <div className='mobile-nav'>
-          <div className='hamicon' onClick={toggleIcon}>
-            <img src={hamIcon === 'hamburger'? hamburger : closeIcon} alt='ham-icon' />
-          </div>
           {
             hamIcon !== 'hamburger' &&
             <div className='hamlink-container'>

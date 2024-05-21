@@ -43,7 +43,7 @@ body{
   align-items: center;
   justify-content: space-between;
 }
-.mobile-nav{
+.mobile-nav, .hamicon{
   display: none
 }
 
@@ -236,29 +236,33 @@ nav .navlogin{
 /* ABOUT SECTION */
 .about-section{
   background-color: rgb(27, 26, 26);
-  height: 100vh;
+  /* height: 100vh; */
   padding-right: 150px;
   padding-left: 150px;
-  /* position: relative; */
   padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .about-content{
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
-  flex-direction: column;
+  margin-bottom: 60px;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
 }
 .about-text{
-  /* max-width: 545px; */
+  max-width: 600px;
   margin-right: 20px;
+  min-width: 400px;
+  flex: 1;
 }
 .aboutimg-container{
-  width: 50%;
   display: flex;
   flex: 1;
-  /* max-width: 545px; */
+  min-width: 400px;
+  max-width: 600px;
 }
 .about-heading{
   color: #F4CE14;
@@ -279,36 +283,10 @@ nav .navlogin{
   font-weight: 400;
   color: silver;
   margin-bottom: 50px;
-  /* margin-bottom: 115px; */
 }
 .aboutimg-container{
   border-radius: 10px;
   overflow: hidden;
-}
-@media(min-width: 768px){
-  .about-content{
-    margin-bottom: 80px;
-  }
-}
-@media(min-width: 680px){
-  .about-content{
-    flex-direction: row;
-    align-items: center;
-  }
-  .about-text{
-    max-width: 50%;
-    margin-right: 24px;
-    /* border: 1px solid white; */
-  }
-  .aboutimg-container{
-    max-width: 50%;
-    /* border: 1px solid white; */
-  }
-}
-@media(min-width: 1200px){
-  .about-body{
-    max-width: 550px;
-  }
 }
 
 /* LOGIN COMPONENT */
@@ -641,6 +619,7 @@ nav .navlogin{
 .rsrv-container{
   /* border: 2px solid red; */
   display: flex;
+  /* flex-direction: column-reverse; */
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -826,6 +805,15 @@ option{
   margin-top: 10px;
   margin-right: 24px;
 }
+.footlink-text:hover{
+  color: #F4CE14;
+}
+.footlink-text.login{
+  cursor: pointer;
+}
+.footlink-text.login:hover{
+  color: #00ff00;
+}
 
 @media(min-width: 1200px){
   .footer-imgbx{
@@ -867,6 +855,10 @@ option{
     margin-left: -120px;
     margin-right: -120px;
   }
+  .about-section{
+    padding-right: 120px;
+    padding-left: 120px;
+  }
   .hero-content, .specials-content{
     margin-left: 120px;
     margin-right: 120px;
@@ -888,6 +880,10 @@ option{
     margin-left: -80px;
     margin-right: -80px;
   }
+  .about-section{
+    padding-right: 80px;
+    padding-left: 80px;
+  }
   .hero-content, .specials-content{
     margin-left: 80px;
     margin-right: 80px;
@@ -906,9 +902,11 @@ option{
   .link-container{
     display: none;
   }
+  .mobile-nav, .hamicon{
+    display: block;
+  }
   .mobile-nav{
     position: absolute;
-    display: block;
     border: 2px solid white;
     right: 0;
     top: 0;
@@ -917,7 +915,7 @@ option{
     height: auto;
   }
   .hamlink-container{
-  
+
   }
   .hamicon{
     width: 40px;
@@ -941,6 +939,24 @@ option{
     /* height: 100vh; */
   }
 }
+
+.about-content{
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.about-text{
+  max-width: 100%;
+}
+.aboutimg-container{
+  max-width: 100%;
+}
+
+@media(max-width: 960px){
+  .about-text{
+    margin-right: 0;
+  }
+}
+
 @media(max-width: 860px){
   body, .navbar{
     padding-right: 50px;

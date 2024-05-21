@@ -55,11 +55,11 @@ export const footerLinks = [
         },
         {
           name: "Order Online",
-          link: "https://www.linkedin.com/in/joshua-oseghale",
+          link: "#reservations",
         },
         {
             name: "Login",
-            link: "https://www.linkedin.com/in/joshua-oseghale",
+            link: "",
         }
       ],
     },

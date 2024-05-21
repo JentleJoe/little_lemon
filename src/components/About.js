@@ -4,7 +4,7 @@ import Button from './Button'
 
 function About() {
   return (
-    <section className='about-section' id='#about'>
+    <section className='about-section' id='about'>
       <div className='about-content'>
         <div className='about-text'>
           <h4 className='about-heading'>Welcome to Little Lemon Restaurant</h4>
@@ -21,12 +21,12 @@ function About() {
             restaurants in Italy. Little Lemon goes beyond classic Italian and incorporates
             additional cuisines from the Mediterranean region.
           </p>
-          <a href='#home'><Button text={"Learn More"} /></a>
         </div>
         <div className='aboutimg-container'>
           <img className='restaurant-img' width={"100%"} height={"100%"} src={restaurant}></img>
         </div>
       </div>
+      <a href='#home'><Button text={"Learn More"} /></a>
     </section>
   )
 }

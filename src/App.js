@@ -62,7 +62,7 @@ function App() {
         <Reservations />
       </main>
       <footer>
-        <Footer />
+        <Footer setLogin={triggerLogin}/>
       </footer>
     </>
   );

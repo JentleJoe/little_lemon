@@ -3,7 +3,7 @@ import Button from './Button'
 
 const Reservations = () => {
   return (
-    <section className='reservations'>
+    <section className='reservations' id='reservations'>
         <h2>Book A Table</h2>
         <div className='rsrv-container'>
             <form className='rsrv-form'>
