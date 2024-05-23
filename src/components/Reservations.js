@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './Button'
 
-const Reservations = () => {
+const Reservations = ({toggleIconClose}) => {
   return (
     <section className='reservations' id='reservations'>
         <h2>Book A Table</h2>
@@ -51,7 +51,7 @@ const Reservations = () => {
                         </select>
                     </div>
                 </div>
-                <div className='rsrv-button'>
+                <div className='rsrv-button' onClick={toggleIconClose}>
                     <Button text="Confirm Order" />
                 </div>
             </form>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './Button'
 
-function Hero() {
+function Hero({toggleIconClose}) {
   return (
     <div className='hero-section' id='home'>
         <div className='hero-content'>

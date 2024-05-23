@@ -2,7 +2,7 @@ import React from 'react'
 import restaurant from '../assets/img/Mario and Adrian b.png'
 import Button from './Button'
 
-function About() {
+function About({toggleIconClose}) {
   return (
     <section className='about-section' id='about'>
       <div className='about-content'>

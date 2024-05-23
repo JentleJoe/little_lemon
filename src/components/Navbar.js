@@ -1,17 +1,9 @@
 import React, { useState } from 'react'
 import logo from '../assets/img/Logo.svg'
 import closeIcon from '../assets/img/close-icon.svg'
-import ham_icon from '../assets/img/hamburger-img.png'
+import ham_icon from '../assets/img/ham_icon.svg'
 
-function Navbar({setLogin, navBg, scrollDirection}) {
-
-  const [hamIcon, setHamIcon] = useState('hamburger')
-
-  const toggleIcon = () =>  {
-    setHamIcon(() => {
-      return hamIcon === 'hamburger'? 'closeIcon' : 'hamburger'
-    })
-  }
+function Navbar({toggleIconClose, hamIcon, toggleIcon, setLogin, navBg, scrollDirection}) {
 
   // const [display,setDisplay] = useState('')
 
@@ -40,18 +32,23 @@ function Navbar({setLogin, navBg, scrollDirection}) {
           <img src={hamIcon === 'hamburger'? ham_icon : closeIcon} alt='ham-icon' />
         </div>
       </div>
-      { <div className='mobile-nav'>
+      { <div className={`mobile-nav ${hamIcon !== 'hamburger' ? 'decor' : ''}`}>
           {
             hamIcon !== 'hamburger' &&
             <div className='hamlink-container'>
               <ul className='hamlinks'>
-                <li className='mobile'><a href="#about">ABOUT</a></li>
-                <li className='mobile'><a href="#home">HOME</a></li>
-                <li className='mobile'><a href="#menu">MENU</a></li>
-                <li className='mobile'><a href="">RESERVATIONS</a></li>
-                <li className='mobile'><a href="">ORDER ONLINE</a></li>
-                <li onClick={setLogin} className='mobile navlogin'>LOGIN</li>
+                <li className='mobile' onClick={toggleIconClose}><a href="#about">ABOUT</a></li>
+                <li className='mobile' onClick={toggleIconClose}><a href="#home">HOME</a></li>
+                <li className='mobile' onClick={toggleIconClose}><a href="#menu">MENU</a></li>
+                <li className='mobile' onClick={toggleIconClose}><a href="#reservations">RESERVATIONS</a></li>
+                <li className='mobile' onClick={toggleIconClose}><a href="">ORDER ONLINE</a></li>
+                <li onClick={setLogin} className='mobile navlogin'>
+                  <span onClick={toggleIconClose}>LOGIN</span>
+                </li>
               </ul>
+              <a href='#home' className='mobile_logo' onClick={toggleIconClose}>
+                <img alt='logo' width={"100"} src={logo}/>
+              </a>
             </div>
           }
         </div>

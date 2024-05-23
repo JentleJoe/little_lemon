@@ -3,7 +3,7 @@ import Button from './Button'
 import Card from './Card'
 import { cardInfo } from '../constants'
 
-function Specials() {
+function Specials({toggleIconClose}) {
     return (
         <section className='specials-section' id='menu'>
             <div className='specials-content'>
