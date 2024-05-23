@@ -41,7 +41,7 @@ function Navbar({toggleIconClose, hamIcon, toggleIcon, setLogin, navBg, scrollDi
                 <li className='mobile' onClick={toggleIconClose}><a href="#home">HOME</a></li>
                 <li className='mobile' onClick={toggleIconClose}><a href="#menu">MENU</a></li>
                 <li className='mobile' onClick={toggleIconClose}><a href="#reservations">RESERVATIONS</a></li>
-                <li className='mobile' onClick={toggleIconClose}><a href="">ORDER ONLINE</a></li>
+                <li className='mobile' onClick={toggleIconClose}><a href="reservations">ORDER ONLINE</a></li>
                 <li onClick={setLogin} className='mobile navlogin'>
                   <span onClick={toggleIconClose}>LOGIN</span>
                 </li>
