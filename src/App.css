@@ -116,7 +116,6 @@ nav .navlogin{
   margin-right: -150px;
 }
 
-
 .hero-content{
   display: flex;
   flex-direction: column;
@@ -309,8 +308,7 @@ nav .navlogin{
   background-color: transparent;
   backdrop-filter: blur(5px);
   border: 1px solid silver;
-  padding-left: 20px;
-  padding-right: 40px;
+  padding: 40px 40px 40px 20px;
   border-radius: 36px;
   width: 350px;
   height: 250px;
@@ -320,8 +318,8 @@ nav .navlogin{
   transition: width 0.5s ease-out, height 0.5s ease-out;
 }
 .login-container.zoomed{
-  width: 700px;
-  height: 500px;
+  width: auto;
+  height: auto;
 }
 .close-button{
   position: absolute;
@@ -357,7 +355,7 @@ nav .navlogin{
 }
 .form-container.zoomed{
   width: auto;
-  height: 420px;
+  height: auto;
 }
 .login-imgbx{
   width: 150px;
@@ -402,6 +400,7 @@ nav .navlogin{
   border-radius: 10px;
   font-size: 18px;
   font-weight: 500;
+  margin-top: 15px;
 }
 .form-button:hover{
   background-color: #495E57;
@@ -420,9 +419,12 @@ nav .navlogin{
   transition: width 0.5s ease-out, height 0.5s ease-out;
 }
 .login-input.zoomed, .form-button.zoomed{
-  width: 250px;
-  height: 40px;
+  width: 280px;
+  height: 45px;
   margin-bottom: 15px;
+}
+.confirmpwd{
+  margin-top: 15px;
 }
 
 .optional-text{
@@ -453,7 +455,7 @@ nav .navlogin{
 .forgetpwd-bx{
   cursor: pointer;
   margin-top: -15px;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   color: whitesmoke;
   font-size: 11px;
   display: flex;
@@ -1006,5 +1008,8 @@ option{
   }
   .heading-text{
     width: 100%;
+  }
+  .mobile-nav{
+    margin-right: 5px;
   }
 }

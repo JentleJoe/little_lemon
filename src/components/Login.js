@@ -37,26 +37,31 @@ const Login = ({setLogin}) => {
                     <label htmlFor='email'>Email</label>
                     <input className={`login-input ${zoomed? 'zoomed' : ''}`} name='email' type='email' required />
                     <label htmlFor='password'>Password</label>
-                    <input className={`login-input ${zoomed? 'zoomed' : ''}`} name='password' type='password' required />
+                    <input className={`login-input ${zoomed? 'zoomed' : ''}`} name='password' type='password' min={8} required />
                     <div className='forgetpwd-bx'>
-                        <p className='forgetpwd'>Forgot Password?</p>
+                        {loginState === 'login' && <p className='forgetpwd'>Forgot Password?</p>}
                     </div>
+                    {
+                        loginState === 'signup' &&
+                        <>
+                            <label htmlFor='confirmPassword' className='confirmpwd'>Confirm Password</label>
+                            <input className={`login-input ${zoomed? 'zoomed' : ''}`} name='confirmPassword' type='password' min={8} required />
+                        </>
+                    }
                     <button className={`form-button ${zoomed? 'zoomed' : ''}`} type='submit'>
                         {loginState === 'login' ? 'Sign In' :  'Sign Up'}
                     </button>
                 </form>
-                <p className={`optional-text ${zoomed? 'zoomed' : ''}`}>Or continue with</p>
+                <p className={`optional-text ${zoomed? 'zoomed' : ''}`}>Or {loginState === 'signup' ? 'Signup' : 'continue'} with</p>
                 <div className={`google-icon ${zoomed? 'zoomed' : ''}`}>
                     <img src={google} alt='google-icon' />
                 </div>
-                { loginState === 'login' ?
+                {
                     <p className={`signup-text ${zoomed? 'zoomed' : ''}`} onClick={updateLoginState}>
-                        New to little lemon? <span className={`signup ${zoomed? 'zoomed' : ''}`}>
-                            Signup
+                        {loginState === 'login' ? 'New to little lemon? ' : 'Already have an account? '} <span className={`signup ${zoomed? 'zoomed' : ''}`}>
+                            {loginState === 'login' ? 'Signup' : 'Login'}
                         </span>
                     </p>
-                    :
-                    <img src={logo} alt='logo' width={100}/>
                 }
             </div>
         </div>
