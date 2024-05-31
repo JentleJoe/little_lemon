@@ -9,6 +9,8 @@ function App() {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [scrollDirection, setScrollDirection] = useState("")
   const [hamIcon, setHamIcon] = useState('hamburger')
+  // Login State
+  const [userLogin, setUserLogin] = useState(false)
 
   // Handle Nav display on scroll direction
   useEffect(() => {
@@ -62,10 +64,11 @@ function App() {
   return (
     <>
       <header className={`${navBg} ${scrollDirection}`}>
-        <Navbar toggleIcon={toggleIcon} hamIcon={hamIcon} toggleIconClose={toggleIconClose} setLogin={triggerLogin} navBg={navBg} scrollDirection={scrollDirection} />
+        <Navbar toggleIcon={toggleIcon} hamIcon={hamIcon} toggleIconClose={toggleIconClose} setLogin={triggerLogin}
+         navBg={navBg} scrollDirection={scrollDirection} userLogin={userLogin} setUserLogin={setUserLogin} />
       </header>
       <main>
-        {login && <Login setLogin={triggerLogin} />}
+        {login && <Login setLogin={triggerLogin} userLogin={userLogin} setUserLogin={setUserLogin} />}
         <Hero toggleIconClose={toggleIconClose}/>
         <Specials toggleIconClose={toggleIconClose}/>
         <Promotion toggleIconClose={toggleIconClose}/>
@@ -73,7 +76,7 @@ function App() {
         <Testimonials />
         <Reservations toggleIconClose={toggleIconClose}/>
       </main>
-      <footer>
+      <footer userLogin={userLogin} setUserLogin={setUserLogin}>
         <Footer toggleIconClose={toggleIconClose} setLogin={triggerLogin}/>
       </footer>
     </>

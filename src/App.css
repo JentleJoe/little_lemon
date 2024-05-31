@@ -400,7 +400,7 @@ nav .navlogin{
   border-radius: 10px;
   font-size: 18px;
   font-weight: 500;
-  margin-top: 15px;
+  margin-top: calc(15px + 0.5em); /* 0.5em to represent text-size */
 }
 .form-button:hover{
   background-color: #495E57;
@@ -420,7 +420,7 @@ nav .navlogin{
 }
 .login-input.zoomed, .form-button.zoomed{
   width: 280px;
-  height: 45px;
+  height: 50px;
   margin-bottom: 15px;
 }
 .confirmpwd{

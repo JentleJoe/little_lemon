@@ -4,10 +4,40 @@ import closeIcon from '../assets/img/close-icon.svg'
 import hamburger from '../assets/img/hamburger-img.png'
 import logo from '../assets/img/Logo.svg'
 
-const Login = ({setLogin}) => {
+const Login = ({setLogin, userLogin, setUserLogin}) => {
 
     const [loginState, setLoginState] = useState('login')
     const [zoomed, setZoomed] = useState(false)
+    const [formData, setFormData] = useState({})
+
+    const handleChange = (e) => {
+        const {name, type, value} = e.target
+
+        setFormData((prevData) => {
+            return({
+                ...prevData,
+                [name] : value
+            })
+        } )
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(formData)
+
+        if (loginState === 'signup'){
+            if (formData.password !== formData.confirmPassword){
+                console.log("passwords\'s dont match")
+                //Give user feedback
+                return
+            }
+            console.log("passwords match")
+        }
+        // Set login state to true and change nav and footer login value to logout
+        // When login state is True, reservations should submit successfully
+        setUserLogin((prevState) => !prevState)
+        setLogin()
+    }
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {
@@ -33,11 +63,11 @@ const Login = ({setLogin}) => {
             </div>
             <div className={`form-container ${zoomed? 'zoomed' : ''}`}>
                 <h2 className={`login-text ${zoomed? 'zoomed' : ''}`}>{loginState === 'login' ? 'Sign In' : 'Signup'}</h2>
-                <form className={`login-form ${zoomed? 'zoomed' : ''}`}>
+                <form className={`login-form ${zoomed? 'zoomed' : ''}`} onSubmit={handleSubmit}>
                     <label htmlFor='email'>Email</label>
-                    <input id='email' className={`login-input ${zoomed? 'zoomed' : ''}`} name='email' type='email' required />
+                    <input onChange={handleChange} id='email' className={`login-input ${zoomed? 'zoomed' : ''}`} name='email' type='email' required />
                     <label htmlFor='password'>Password</label>
-                    <input id='password' className={`login-input ${zoomed? 'zoomed' : ''}`} name='password' type='password' min={8} required />
+                    <input onChange={handleChange} id='password' className={`login-input ${zoomed? 'zoomed' : ''}`} name='password' type='password' min={8} required />
                     <div className='forgetpwd-bx'>
                         {loginState === 'login' && <p className='forgetpwd'>Forgot Password?</p>}
                     </div>
@@ -45,7 +75,7 @@ const Login = ({setLogin}) => {
                         loginState === 'signup' &&
                         <>
                             <label htmlFor='confirmPassword' className='confirmpwd'>Confirm Password</label>
-                            <input id='confirmPassword' className={`login-input ${zoomed? 'zoomed' : ''}`} name='confirmPassword' type='password' min={8} required />
+                            <input onChange={handleChange} id='confirmPassword' className={`login-input ${zoomed? 'zoomed' : ''}`} name='confirmPassword' type='password' min={8} required />
                         </>
                     }
                     <button className={`form-button ${zoomed? 'zoomed' : ''}`} type='submit'>
