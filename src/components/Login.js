@@ -35,9 +35,9 @@ const Login = ({setLogin}) => {
                 <h2 className={`login-text ${zoomed? 'zoomed' : ''}`}>{loginState === 'login' ? 'Sign In' : 'Signup'}</h2>
                 <form className={`login-form ${zoomed? 'zoomed' : ''}`}>
                     <label htmlFor='email'>Email</label>
-                    <input className={`login-input ${zoomed? 'zoomed' : ''}`} name='email' type='email' required />
+                    <input id='email' className={`login-input ${zoomed? 'zoomed' : ''}`} name='email' type='email' required />
                     <label htmlFor='password'>Password</label>
-                    <input className={`login-input ${zoomed? 'zoomed' : ''}`} name='password' type='password' min={8} required />
+                    <input id='password' className={`login-input ${zoomed? 'zoomed' : ''}`} name='password' type='password' min={8} required />
                     <div className='forgetpwd-bx'>
                         {loginState === 'login' && <p className='forgetpwd'>Forgot Password?</p>}
                     </div>
@@ -45,7 +45,7 @@ const Login = ({setLogin}) => {
                         loginState === 'signup' &&
                         <>
                             <label htmlFor='confirmPassword' className='confirmpwd'>Confirm Password</label>
-                            <input className={`login-input ${zoomed? 'zoomed' : ''}`} name='confirmPassword' type='password' min={8} required />
+                            <input id='confirmPassword' className={`login-input ${zoomed? 'zoomed' : ''}`} name='confirmPassword' type='password' min={8} required />
                         </>
                     }
                     <button className={`form-button ${zoomed? 'zoomed' : ''}`} type='submit'>
