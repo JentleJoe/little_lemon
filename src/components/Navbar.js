@@ -12,6 +12,15 @@ function Navbar({toggleIconClose, hamIcon, toggleIcon, setLogin, navBg, scrollDi
   //     display === '' ? "mobile" : ''
   //   })
   // }
+  // const handleLogin = () => {
+  //   if (userLogin === true){
+  //     setUserLogin((prevState) => !prevState)
+  //     // Add log out prompt to alert user that they're logged out
+  //   }
+  //   else{
+  //     setLogin()
+  //   }
+  // }
   return (
     <nav>
       <div className={`${navBg} ${scrollDirection} navbar`}>
@@ -25,7 +34,7 @@ function Navbar({toggleIconClose, hamIcon, toggleIcon, setLogin, navBg, scrollDi
                 <li><a href="#menu">MENU</a></li>
                 <li><a href="#reservations">RESERVATIONS</a></li>
                 <li><a href="#reservations">ORDER ONLINE</a></li>
-                <li onClick={setLogin} className='mobile navlogin'>{userLogin === false ? 'LOGIN' : 'LOGOUT'}</li>
+                <li onClick={setLogin} className={`mobile navlogin ${userLogin === true && 'signout'} `}>{userLogin === false ? 'LOGIN' : 'LOGOUT'}</li>
             </ul>
         </div>
         <div className='hamicon' onClick={toggleIcon}>
@@ -42,7 +51,7 @@ function Navbar({toggleIconClose, hamIcon, toggleIcon, setLogin, navBg, scrollDi
                 <li className='mobile' onClick={toggleIconClose}><a href="#menu">MENU</a></li>
                 <li className='mobile' onClick={toggleIconClose}><a href="#reservations">RESERVATIONS</a></li>
                 <li className='mobile' onClick={toggleIconClose}><a href="reservations">ORDER ONLINE</a></li>
-                <li onClick={setLogin} className='mobile navlogin'>
+                <li onClick={setLogin} className={`mobile navlogin ${userLogin === true && 'signout'} `}>
                   <span onClick={toggleIconClose}>{userLogin === false ? 'LOGIN' : 'LOGOUT'}</span>
                 </li>
               </ul>

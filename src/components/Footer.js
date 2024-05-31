@@ -3,7 +3,7 @@ import {footerLinks} from '../constants'
 import restaurant from '../assets/img/restauranfood.jpg'
 import hamburger from '../assets/img/hamburger-img.png'
 
-function Footer({toggleIconClose, setLogin}) {
+function Footer({toggleIconClose, setLogin, userLogin}) {
   return (
     <section className="footer-section">
         <div className='footer-content' >
@@ -23,8 +23,8 @@ function Footer({toggleIconClose, setLogin}) {
                         content.links.map((item, index) => {
                             return(
                                 item.name === 'Login' ?
-                                <p onClick={setLogin} className={`footlink-text login`}>
-                                    <span onClick={toggleIconClose}>{item.name}</span>
+                                <p onClick={setLogin} className={`footlink-text login ${userLogin === true && 'logout'}`}>
+                                    <span onClick={toggleIconClose}>{`${userLogin === false ? 'Login' : 'Logout'}`}</span>
                                 </p>
                                 :
                                 <a key={item.name} href={item.link} target="" onClick={toggleIconClose}>

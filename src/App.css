@@ -75,14 +75,17 @@ a{
   color:#F4CE14;
 }
 .navlogin:hover{
-  font-weight: 600;
   color: #00ff00;
 }
 
 nav .navlogin{
+  font-weight: 600;
   color: #4DA94D;
   margin-right: 0;
   cursor: pointer;
+}
+.navlogin.signout{
+  color: red;
 }
 
 #button{
@@ -815,6 +818,9 @@ option{
 }
 .footlink-text.login:hover{
   color: #00ff00;
+}
+.footlink-text.login.logout:hover{
+  color: red;
 }
 
 @media(min-width: 1200px){

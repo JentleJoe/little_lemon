@@ -49,6 +49,15 @@ function App() {
   const triggerLogin = () => {
     setLogin(prev => !prev)
   }
+  const handleLogin = () => {
+    if (userLogin === true){
+      setUserLogin((prevState) => !prevState)
+      // Add log out prompt to alert user that they're logged out
+    }
+    else{
+      setLogin(prev => !prev)
+    }
+  }
 
   const toggleIcon = () =>  {
     setHamIcon(() => {
@@ -64,7 +73,7 @@ function App() {
   return (
     <>
       <header className={`${navBg} ${scrollDirection}`}>
-        <Navbar toggleIcon={toggleIcon} hamIcon={hamIcon} toggleIconClose={toggleIconClose} setLogin={triggerLogin}
+        <Navbar toggleIcon={toggleIcon} hamIcon={hamIcon} toggleIconClose={toggleIconClose} setLogin={handleLogin}
          navBg={navBg} scrollDirection={scrollDirection} userLogin={userLogin} setUserLogin={setUserLogin} />
       </header>
       <main>
@@ -76,8 +85,8 @@ function App() {
         <Testimonials />
         <Reservations toggleIconClose={toggleIconClose}/>
       </main>
-      <footer userLogin={userLogin} setUserLogin={setUserLogin}>
-        <Footer toggleIconClose={toggleIconClose} setLogin={triggerLogin}/>
+      <footer setUserLogin={setUserLogin}>
+        <Footer userLogin={userLogin} toggleIconClose={toggleIconClose} setLogin={handleLogin}/>
       </footer>
     </>
   );
