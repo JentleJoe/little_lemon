@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import google from '../assets/img/google-icon.svg'
 import closeIcon from '../assets/img/close-icon.svg'
 import hamburger from '../assets/img/hamburger-img.png'
-import logo from '../assets/img/Logo.svg'
 
 const Login = ({setLogin, userLogin, setUserLogin}) => {
 

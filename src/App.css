@@ -74,15 +74,14 @@ a{
 .navlinks a:hover{
   color:#F4CE14;
 }
-.navlogin:hover{
-  color: #00ff00;
-}
 
-nav .navlogin{
-  font-weight: 600;
-  color: #4DA94D;
+.navlogin{
+  color: #61d661;
   margin-right: 0;
   cursor: pointer;
+}
+.navlogin:hover{
+  color: #00ff00;
 }
 .navlogin.signout{
   color: red;

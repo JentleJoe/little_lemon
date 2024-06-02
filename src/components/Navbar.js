@@ -34,7 +34,7 @@ function Navbar({toggleIconClose, hamIcon, toggleIcon, setLogin, navBg, scrollDi
                 <li><a href="#menu">MENU</a></li>
                 <li><a href="#reservations">RESERVATIONS</a></li>
                 <li><a href="#reservations">ORDER ONLINE</a></li>
-                <li onClick={setLogin} className={`mobile navlogin ${userLogin === true && 'signout'} `}>{userLogin === false ? 'LOGIN' : 'LOGOUT'}</li>
+                <li onClick={setLogin} className={`navlogin ${userLogin === true && 'signout'} `}>{userLogin === false ? 'LOGIN' : 'LOGOUT'}</li>
             </ul>
         </div>
         <div className='hamicon' onClick={toggleIcon}>
