@@ -34,97 +34,116 @@ export const cardInfo = [
 ]
 
 export const footerLinks = [
-    {
-      title: "Doormant Navigation",
-      links: [
-        {
-          name: "Home",
-          link: "#home",
-        },
-        {
-          name: "About",
-          link: "#about",
-        },
-        {
-          name: "Menu",
-          link: "#menu",
-        },
-        {
-          name: "Reservations",
-          link: "#reservations",
-        },
-        {
-          name: "Order Online",
-          link: "#reservations",
-        },
-        {
-          name: "Login",
-          link: "",
-        }
-      ],
-    },
-    {
-      title: "Contact",
-      links: [
-        {
-          name: "Address",
-          link: "https://www.linkedin.com/in/joshua-oseghale",
-        },
-        {
-          name: "Phone Number",
-          link: "https://www.linkedin.com/in/joshua-oseghale",
-        },
-        {
-          name: "Email",
-          link: "https://www.linkedin.com/in/joshua-oseghale",
-        },
-      ],
-    },
-    {
-      title: "Social Media Links",
-      links: [
-        {
-          name: "Twitter|X",
-          link: "https://www.twitter.com/Code_Chart",
-        },
-        {
-          name: "Linkdin",
-          link: "https://www.linkedin.com/in/joshua-oseghale",
-        },
-        {
-            name: "Facebook",
-            link: "https://www.facebook.com/aigbokhaebholo.joshua",
-        }
-      ],
-    },
-  ];
+  {
+    title: "Doormant Navigation",
+    links: [
+      {
+        name: "Home",
+        link: "#home",
+      },
+      {
+        name: "About",
+        link: "#about",
+      },
+      {
+        name: "Menu",
+        link: "#menu",
+      },
+      {
+        name: "Reservations",
+        link: "#reservations",
+      },
+      {
+        name: "Order Online",
+        link: "#reservations",
+      },
+      {
+        name: "Login",
+        link: "",
+      }
+    ],
+  },
+  {
+    title: "Contact",
+    links: [
+      {
+        name: "Address",
+        link: "https://www.linkedin.com/in/joshua-oseghale",
+      },
+      {
+        name: "Phone Number",
+        link: "https://www.linkedin.com/in/joshua-oseghale",
+      },
+      {
+        name: "Email",
+        link: "https://www.linkedin.com/in/joshua-oseghale",
+      },
+    ],
+  },
+  {
+    title: "Social Media Links",
+    links: [
+      {
+        name: "Twitter|X",
+        link: "https://www.twitter.com/Code_Chart",
+      },
+      {
+        name: "Linkdin",
+        link: "https://www.linkedin.com/in/joshua-oseghale",
+      },
+      {
+          name: "Facebook",
+          link: "https://www.facebook.com/aigbokhaebholo.joshua",
+      }
+    ],
+  },
+];
 
-  export const userReview = [
-    {
-      img: user1,
-      date: "12th December, 2023",
-      review: `Absolutely loved the authentic flavors at Little Lemon!
-      The Mediterranean fusion dishes were a delightful surprise.
-      Can't wait to return!`,
-       name: "Dora Osagie",
-       bio: "Lawyer | Content Writer"
-    },
-    {
-      img: user2,
-      date: "7th January, 2024",
-      review: `Little Lemon is my new favorite spot in Chicago!
-      The ambiance, the service, and, most importantly, the food
-      exceeded my expectations. Highly recommend!`,
-       name: "Blessing Eghwere",
-       bio: "Digital Fashion Designer"
-    },
-    {
-      img: people,
-      date: "5th March, 2024",
-      review: `From the first bite to the last, every dish at
-      Little Lemon was bursting with flavor. A true gem
-      in the heart of the city. I'm give them five stars!`,
-       name: "David",
-       bio: "Data Analyst"
-    },
-  ]
+export const userReview = [
+  {
+    img: user1,
+    date: "12th December, 2023",
+    review: `Absolutely loved the authentic flavors at Little Lemon!
+    The Mediterranean fusion dishes were a delightful surprise.
+    Can't wait to return!`,
+      name: "Dora Osagie",
+      bio: "Lawyer | Content Writer"
+  },
+  {
+    img: user2,
+    date: "7th January, 2024",
+    review: `Little Lemon is my new favorite spot in Chicago!
+    The ambiance, the service, and, most importantly, the food
+    exceeded my expectations. Highly recommend!`,
+      name: "Blessing Eghwere",
+      bio: "Digital Fashion Designer"
+  },
+  {
+    img: people,
+    date: "5th March, 2024",
+    review: `From the first bite to the last, every dish at
+    Little Lemon was bursting with flavor. A true gem
+    in the heart of the city. I'm give them five stars!`,
+      name: "David",
+      bio: "Data Analyst"
+  },
+]
+
+export const dialogBox = {
+  loginError: {
+    text: "Login Error",
+    color: "red",
+  },
+  loginSuccess: {
+    text: "Login Success",
+    color: "green",
+  },
+  bookingError: {
+    text: "Unable to Reserve Table",
+    color: "red",
+  },
+  bookingSuccess: {
+    text: "Table Reservation Success",
+    color: "green",
+  }
+}

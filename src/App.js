@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { Navbar, Hero, Specials, Testimonials, About, Footer, Login, Promotion, Reservations } from './components';
+import { Navbar, Hero, Specials, Testimonials, About, Footer, Login, Promotion, Reservations, Dialog } from './components';
 
 function App() {
 
@@ -85,7 +85,7 @@ function App() {
         <Testimonials />
         <Reservations toggleIconClose={toggleIconClose}/>
       </main>
-      <footer setUserLogin={setUserLogin}>
+      <footer>
         <Footer userLogin={userLogin} toggleIconClose={toggleIconClose} setLogin={handleLogin}/>
       </footer>
     </>

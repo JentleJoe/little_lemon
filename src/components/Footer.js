@@ -23,7 +23,7 @@ function Footer({toggleIconClose, setLogin, userLogin}) {
                         content.links.map((item, index) => {
                             return(
                                 item.name === 'Login' ?
-                                <p onClick={setLogin} className={`footlink-text login ${userLogin === true && 'logout'}`}>
+                                <p key={item.name} onClick={setLogin} className={`footlink-text login ${userLogin === true && 'logout'}`}>
                                     <span onClick={toggleIconClose}>{`${userLogin === false ? 'Login' : 'Logout'}`}</span>
                                 </p>
                                 :

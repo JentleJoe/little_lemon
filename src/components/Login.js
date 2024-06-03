@@ -2,15 +2,21 @@ import React, { useEffect, useState } from 'react'
 import google from '../assets/img/google-icon.svg'
 import closeIcon from '../assets/img/close-icon.svg'
 import hamburger from '../assets/img/hamburger-img.png'
+import Dialog from './Dialog'
+import { dialogBox } from '../constants'
 
 const Login = ({setLogin, userLogin, setUserLogin}) => {
 
     const [loginState, setLoginState] = useState('login')
     const [zoomed, setZoomed] = useState(false)
     const [formData, setFormData] = useState({})
+    const [showLoginDialog, setShowLoginDialog] = useState(false)
+
+    const alertMessage = dialogBox.loginSuccess.text
+    const alertColor = dialogBox.loginSuccess.color
 
     const handleChange = (e) => {
-        const {name, type, value} = e.target
+        const {name, value} = e.target
 
         setFormData((prevData) => {
             return({
@@ -18,6 +24,17 @@ const Login = ({setLogin, userLogin, setUserLogin}) => {
                 [name] : value
             })
         } )
+    }
+
+    const toggleLoginDialog = () => {
+        setShowLoginDialog((prev) => !prev)
+    }
+    const handleDialog = () => {
+        // create timer to trigger on and off dialog
+        showDialog === false && toggleDialog()
+        // delay for 3 seconds
+        // toggle dialog again to close
+        // dialog === true && toggleDialog()
     }
 
     const handleSubmit = (e) => {
@@ -55,6 +72,8 @@ const Login = ({setLogin, userLogin, setUserLogin}) => {
     }
 
   return (
+    <>
+    {/* {showDialog && showLoginDialog ? <Dialog text={message} color={color}/> : null} */}
     <div className='login-dialog'>
         <div className={`login-container ${zoomed? 'zoomed' : ''}`}>
             <div className={`login-imgbx ${zoomed? 'zoomed' : ''}`}>
@@ -98,6 +117,7 @@ const Login = ({setLogin, userLogin, setUserLogin}) => {
             <img width={"30"} src={closeIcon} />
         </div>
     </div>
+    </>
   )
 }
 
