@@ -40,21 +40,6 @@ function Footer({toggleIconClose, setLogin, userLogin}) {
             }
             </div>
         </div>
-        {/* <div className="">
-        <p className="">Copyright ©️  2024 JoeBank. All Rights Reserved.</p>
-            <div className="">
-                {
-                socialMedia.map((socials, index) => {
-                    return(
-                    <a href={socials.link} key={socials.id} target="_blank"
-                    className={`${index != socialMedia.length - 1 ? "mr-6" : "mr-0"}`} >
-                        <img className="" src={socials.icon}  />
-                    </a>
-                    )
-                })
-                }
-            </div>
-        </div> */}
     </section>
   )
 }
