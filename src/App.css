@@ -300,6 +300,9 @@ a{
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
 }
+.login-dialog.none{
+  display: none;
+}
 /* add a minimum width to the below style */
 
 .login-container{

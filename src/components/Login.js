@@ -5,12 +5,13 @@ import hamburger from '../assets/img/hamburger-img.png'
 import Dialog from './Dialog'
 import { dialogBox } from '../constants'
 
-const Login = ({setLogin, userLogin, setUserLogin}) => {
+const Login = ({setLogin, userLogin, setUserLogin, login}) => {
 
     const [loginState, setLoginState] = useState('login')
     const [zoomed, setZoomed] = useState(false)
     const [formData, setFormData] = useState({})
     const [showDialog, setShowDialog] = useState(false)
+    const [dialogStyle, setDialogStyle] = useState('')
 
     const alertMessage = dialogBox.loginSuccess.text
     const alertColor = dialogBox.loginSuccess.color
@@ -28,8 +29,22 @@ const Login = ({setLogin, userLogin, setUserLogin}) => {
 
     const handleDialog = () => {
         !showDialog && setShowDialog((prev) => !prev) //displays dialog
-        // delay for 2 seconds
-        // showDialog && setShowDialog((prev) => !prev)  //closes dialog
+        setDialogStyle("none") //hides login component
+        setTimeout(() => {
+            setShowDialog((prev) => !prev)  //displays dialog
+            login && setLogin() //unmounts login compoment
+            // clearForm() // not necessary since component already unmounted
+        }, 1000);
+        // setShowDialog((prev) => !prev)
+        // clear form function
+    }
+
+    const clearForm = () => {
+        setFormData({
+            email: '',
+            password: '',
+            confirmPassword: ''
+        })
     }
 
     const handleSubmit = (e) => {
@@ -49,6 +64,8 @@ const Login = ({setLogin, userLogin, setUserLogin}) => {
         setUserLogin((prevState) => !prevState)
         setLogin()
         handleDialog()
+        // clearForm() //Already contained in handleDialog function
+        // login && setLogin() //unmounts login compoment
     }
 
     useEffect(() => {
@@ -69,8 +86,8 @@ const Login = ({setLogin, userLogin, setUserLogin}) => {
 
   return (
     <>
-    {/* {showDialog && showLoginDialog ? <Dialog text={message} color={color}/> : null} */}
-    <div className='login-dialog'>
+    {showDialog && <Dialog text={alertMessage} color={alertColor}/>}
+    <div className={`login-dialog ${dialogStyle}`}>
         <div className={`login-container ${zoomed? 'zoomed' : ''}`}>
             <div className={`login-imgbx ${zoomed? 'zoomed' : ''}`}>
                 <img alt='login-img' src={hamburger} />
@@ -79,9 +96,11 @@ const Login = ({setLogin, userLogin, setUserLogin}) => {
                 <h2 className={`login-text ${zoomed? 'zoomed' : ''}`}>{loginState === 'login' ? 'Sign In' : 'Signup'}</h2>
                 <form className={`login-form ${zoomed? 'zoomed' : ''}`} onSubmit={handleSubmit}>
                     <label htmlFor='email'>Email</label>
-                    <input onChange={handleChange} id='email' className={`login-input ${zoomed? 'zoomed' : ''}`} name='email' type='email' required />
+                    <input onChange={handleChange} id='email' className={`login-input ${zoomed? 'zoomed' : ''}`}
+                     name='email' type='email' required value={formData.email} />
                     <label htmlFor='password'>Password</label>
-                    <input onChange={handleChange} id='password' className={`login-input ${zoomed? 'zoomed' : ''}`} name='password' type='password' min={8} required />
+                    <input onChange={handleChange} id='password' className={`login-input ${zoomed? 'zoomed' : ''}`}
+                     name='password' type='password' min={8} value={formData.password} required />
                     <div className='forgetpwd-bx'>
                         {loginState === 'login' && <p className='forgetpwd'>Forgot Password?</p>}
                     </div>
@@ -89,7 +108,8 @@ const Login = ({setLogin, userLogin, setUserLogin}) => {
                         loginState === 'signup' &&
                         <>
                             <label htmlFor='confirmPassword' className='confirmpwd'>Confirm Password</label>
-                            <input onChange={handleChange} id='confirmPassword' className={`login-input ${zoomed? 'zoomed' : ''}`} name='confirmPassword' type='password' min={8} required />
+                            <input onChange={handleChange} id='confirmPassword' className={`login-input ${zoomed? 'zoomed' : ''}`}
+                             name='confirmPassword' type='password' value={formData.confirmPassword} min={8} required />
                         </>
                     }
                     <button className={`form-button ${zoomed? 'zoomed' : ''}`} type='submit'>

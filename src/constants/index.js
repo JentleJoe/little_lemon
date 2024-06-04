@@ -143,7 +143,7 @@ export const dialogBox = {
     color: "red",
   },
   bookingSuccess: {
-    text: "Table Reservation Success",
+    text: "Table Booked Successfully",
     color: "green",
   }
 }

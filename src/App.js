@@ -74,10 +74,10 @@ function App() {
     <>
       <header className={`${navBg} ${scrollDirection}`}>
         <Navbar toggleIcon={toggleIcon} hamIcon={hamIcon} toggleIconClose={toggleIconClose} setLogin={handleLogin}
-         navBg={navBg} scrollDirection={scrollDirection} userLogin={userLogin} setUserLogin={setUserLogin} />
+         navBg={navBg} scrollDirection={scrollDirection} userLogin={userLogin} setUserLogin={handleLogin} />
       </header>
       <main>
-        {login && <Login setLogin={triggerLogin} userLogin={userLogin} setUserLogin={setUserLogin} />}
+        {login && <Login setLogin={triggerLogin} userLogin={userLogin} setUserLogin={handleLogin} login={login} />}
         <Hero toggleIconClose={toggleIconClose}/>
         <Specials toggleIconClose={toggleIconClose}/>
         <Promotion toggleIconClose={toggleIconClose}/>
