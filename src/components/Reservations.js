@@ -6,11 +6,36 @@ import { dialogBox } from '../constants'
 
 const Reservations = ({toggleIconClose}) => {
 
-    const [formData, setFormData] = useState({location: "indoor"})
+    const [formData, setFormData] = useState({})
     const [showDialog, setShowDialog] = useState(false)
 
     const alertMessage = dialogBox.bookingSuccess.text
     const alertColor = dialogBox.bookingSuccess.color
+
+    // SELECT STATE MANAGEMENT
+    const selectedOccassion = [
+        { value: 'birthday', label: 'Birthday' },
+        { value: 'engagement', label: 'Engagement' },
+        { value: 'anniversry', label: 'Anniversary' }
+    ]
+    const selectedTime = [
+        {value: "8:00", label: "8:00"},
+        {value: "10:00", label: "10:00"},
+        {value: "12:00", label: "12:00"},
+        {value: "14:00", label: "14:00"},
+        {value: "16:00", label: "16:00"},
+        {value: "18:00", label: "18:00"}
+    ]
+    const selectedNumber = [
+        {value: "2",  label: "2 people"},
+        {value: "4",  label: "4 people"},
+        {value: "6",  label: "6 people"},
+        {value: "8",  label: "8 people"}
+    ]
+    const selectedLocation = [
+        {value: "indoor", label: "Indoor"},
+        {value: "Outdoor", label: "Outdoor"}
+    ]
 
     const handleChange = (e) => {
         const {name, value} = e.target
@@ -21,19 +46,32 @@ const Reservations = ({toggleIconClose}) => {
                 [name] : value
             })
         } )
-    }
- 
-    const handleDialog = () => {
-        !showDialog && setShowDialog((prev) => !prev) //displays dialog
-        // delay for 2 seconds
-        // showDialog && setShowDialog((prev) => !prev)  //closes dialog
+        console.log(formData)
     }
 
+    const handleDialog = () => {
+        !showDialog && setShowDialog((prev) => !prev) //displays dialog
+        // show order summary
+        // unmount order summary componnt on button click
+        setTimeout(() => {
+            setShowDialog((prev) => !prev)
+        }, 1000);
+    }
+
+    const resetForm = () => {
+        setFormData({
+            occassion: "",
+            time: "",
+            number: "",
+            location: ""
+        })
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(formData)
         handleDialog()
+        // Submit form to API
     }
 
   return (
@@ -48,9 +86,16 @@ const Reservations = ({toggleIconClose}) => {
                         <label htmlFor='occassion'>Select Occassion</label>
                         <select name='occassion' onChange={handleChange} id='occassion' required>
                             <option value="">Select Occassion</option>
-                            <option value="birthday">Birthday</option>
-                            <option value="engagement">Engagement</option>
-                            <option value="anniversary">Anniversary</option>
+                            {/* map selectedOccassion array */}
+                            {
+                                selectedOccassion.map((occassion) => {
+                                    return(
+                                        <option key={occassion.value} value={occassion.value}>
+                                            {occassion.label}
+                                        </option>
+                                    )
+                                })
+                            }
                         </select>
                     </div>
                     <div className='rsv-input'>
@@ -61,29 +106,44 @@ const Reservations = ({toggleIconClose}) => {
                         <label htmlFor='time'>Select Time</label>
                         <select name='time' onChange={handleChange} id='time' required>
                             <option value="">Select Time</option>
-                            <option value="8:00">8:00</option>
-                            <option value="10:00">10:00</option>
-                            <option value="12:00">12:00</option>
-                            <option value="14:00">14:00</option>
-                            <option value="16:00">16:00</option>
-                            <option value="18:00">18:00</option>
+                            {
+                                selectedTime.map((occassion) => {
+                                    return(
+                                        <option key={occassion.value} value={occassion.value}>
+                                            {occassion.label}
+                                        </option>
+                                    )
+                                })
+                            }
                         </select>
                     </div>
                     <div className='rsv-input'>
                         <label htmlFor='number'>Number of people</label>
                         <select name='number' onChange={handleChange} id='number' required>
                             <option value="">Select Number</option>
-                            <option value="2">2 people</option>
-                            <option value="4">4 people</option>
-                            <option value="6">6 people</option>
-                            <option value="8">8 people</option>
+                            {
+                                selectedNumber.map((occassion) => {
+                                    return(
+                                        <option key={occassion.value} value={occassion.value}>
+                                            {occassion.label}
+                                        </option>
+                                    )
+                                })
+                            }
                         </select>
                     </div>
                     <div className='rsv-input'>
                         <label htmlFor='location'>Select Table location</label>
                         <select name='location' onChange={handleChange} id='location'>
-                            <option value="indoor">Indoor</option>
-                            <option value="outdoor">Outdoor</option>
+                            {
+                                selectedLocation.map((occassion) => {
+                                    return(
+                                        <option key={occassion.value} value={occassion.value}>
+                                            {occassion.label}
+                                        </option>
+                                    )
+                                })
+                            }
                         </select>
                     </div>
                 </div>
