@@ -10,7 +10,7 @@ const Login = ({setLogin, userLogin, setUserLogin}) => {
     const [loginState, setLoginState] = useState('login')
     const [zoomed, setZoomed] = useState(false)
     const [formData, setFormData] = useState({})
-    const [showLoginDialog, setShowLoginDialog] = useState(false)
+    const [showDialog, setShowDialog] = useState(false)
 
     const alertMessage = dialogBox.loginSuccess.text
     const alertColor = dialogBox.loginSuccess.color
@@ -26,15 +26,10 @@ const Login = ({setLogin, userLogin, setUserLogin}) => {
         } )
     }
 
-    const toggleLoginDialog = () => {
-        setShowLoginDialog((prev) => !prev)
-    }
     const handleDialog = () => {
-        // create timer to trigger on and off dialog
-        showDialog === false && toggleDialog()
-        // delay for 3 seconds
-        // toggle dialog again to close
-        // dialog === true && toggleDialog()
+        !showDialog && setShowDialog((prev) => !prev) //displays dialog
+        // delay for 2 seconds
+        // showDialog && setShowDialog((prev) => !prev)  //closes dialog
     }
 
     const handleSubmit = (e) => {
@@ -53,6 +48,7 @@ const Login = ({setLogin, userLogin, setUserLogin}) => {
         // When login state is True, reservations should submit successfully
         setUserLogin((prevState) => !prevState)
         setLogin()
+        handleDialog()
     }
 
     useEffect(() => {
