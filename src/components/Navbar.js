@@ -25,7 +25,7 @@ function Navbar({toggleIconClose, hamIcon, toggleIcon, setLogin, navBg, scrollDi
     <nav>
       <div className={`${navBg} ${scrollDirection} navbar`}>
         <div>
-            <img alt='logo' width={"150"} src={logo}/>
+            <img alt='logo' className='navLogo' src={logo}/>
         </div>
         <div className='link-container'>
             <ul className='navlinks'>
