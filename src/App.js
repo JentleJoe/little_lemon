@@ -73,20 +73,20 @@ function App() {
   return (
     <>
       <header className={`${navBg} ${scrollDirection}`}>
-        <Navbar toggleIcon={toggleIcon} hamIcon={hamIcon} toggleIconClose={toggleIconClose} setLogin={handleLogin}
-         navBg={navBg} scrollDirection={scrollDirection} userLogin={userLogin} setUserLogin={handleLogin} />
+        {/* <Navbar toggleIcon={toggleIcon} hamIcon={hamIcon} toggleIconClose={toggleIconClose} setLogin={handleLogin}
+         navBg={navBg} scrollDirection={scrollDirection} userLogin={userLogin} setUserLogin={handleLogin} /> */}
       </header>
       <main>
         {login && <Login setLogin={triggerLogin} userLogin={userLogin} setUserLogin={handleLogin} login={login} />}
         <Hero toggleIconClose={toggleIconClose}/>
-        <Specials toggleIconClose={toggleIconClose}/>
+        {/* <Specials toggleIconClose={toggleIconClose}/> */}
         <Promotion toggleIconClose={toggleIconClose}/>
         <About toggleIconClose={toggleIconClose}/>
         <Testimonials />
-        <Reservations toggleIconClose={toggleIconClose}/>
+        {/* <Reservations toggleIconClose={toggleIconClose}/> */}
       </main>
       <footer>
-        <Footer userLogin={userLogin} toggleIconClose={toggleIconClose} setLogin={handleLogin}/>
+        {/* <Footer userLogin={userLogin} toggleIconClose={toggleIconClose} setLogin={handleLogin}/> */}
       </footer>
     </>
   );
