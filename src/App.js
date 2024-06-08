@@ -83,10 +83,10 @@ function App() {
         <Promotion toggleIconClose={toggleIconClose}/>
         <About toggleIconClose={toggleIconClose}/>
         <Testimonials />
-        {/* <Reservations toggleIconClose={toggleIconClose}/> */}
+        <Reservations toggleIconClose={toggleIconClose}/>
       </main>
       <footer>
-        {/* <Footer userLogin={userLogin} toggleIconClose={toggleIconClose} setLogin={handleLogin}/> */}
+        <Footer userLogin={userLogin} toggleIconClose={toggleIconClose} setLogin={handleLogin}/>
       </footer>
     </>
   );
