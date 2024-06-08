@@ -3,7 +3,7 @@ import logo from '../assets/img/Logo.svg'
 import closeIcon from '../assets/img/close-icon.svg'
 import ham_icon from '../assets/img/ham_icon.svg'
 
-function Navbar({toggleIconClose, hamIcon, toggleIcon, setLogin, navBg, scrollDirection, userLogin, setUserLogin}) {
+function Navbar({toggleIconClose, hamIcon, toggleIcon, setLogin, navBg, scrollDirection, userLogin, handleLogin}) {
 
   // const [display,setDisplay] = useState('')
 
@@ -34,7 +34,9 @@ function Navbar({toggleIconClose, hamIcon, toggleIcon, setLogin, navBg, scrollDi
                 <li><a href="#menu">MENU</a></li>
                 <li><a href="#reservations">RESERVATIONS</a></li>
                 <li><a href="#reservations">ORDER ONLINE</a></li>
-                <li onClick={setLogin} className={`navlogin ${userLogin === true && 'signout'} `}>{userLogin === false ? 'LOGIN' : 'LOGOUT'}</li>
+                <li onClick={handleLogin} className={`navlogin ${userLogin === true && 'signout'} `}>
+                  {userLogin === false ? 'LOGIN' : 'LOGOUT'}
+                </li>
             </ul>
         </div>
         <div className='hamicon' onClick={toggleIcon}>
@@ -51,7 +53,7 @@ function Navbar({toggleIconClose, hamIcon, toggleIcon, setLogin, navBg, scrollDi
                 <li className='mobile' onClick={toggleIconClose}><a href="#menu">MENU</a></li>
                 <li className='mobile' onClick={toggleIconClose}><a href="#reservations">RESERVATIONS</a></li>
                 <li className='mobile' onClick={toggleIconClose}><a href="reservations">ORDER ONLINE</a></li>
-                <li onClick={setLogin} className={`mobile navlogin ${userLogin === true && 'signout'} `}>
+                <li onClick={handleLogin} className={`mobile navlogin ${userLogin === true && 'signout'} `}>
                   <span onClick={toggleIconClose}>{userLogin === false ? 'LOGIN' : 'LOGOUT'}</span>
                 </li>
               </ul>

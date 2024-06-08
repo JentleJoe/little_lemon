@@ -3,7 +3,7 @@ import {footerLinks} from '../constants'
 import restaurant from '../assets/img/restauranfood.jpg'
 import hamburger from '../assets/img/hamburger-img.png'
 
-function Footer({toggleIconClose, setLogin, userLogin}) {
+function Footer({toggleIconClose, handleLogin, userLogin}) {
   return (
     <section className="footer-section">
         <div className='footer-content' >
@@ -26,7 +26,7 @@ function Footer({toggleIconClose, setLogin, userLogin}) {
                             content.links.map((item, index) => {
                                 return(
                                     item.name === 'Login' ?
-                                    <p key={item.name} onClick={setLogin} className={`footlink-text login ${userLogin === true && 'logout'}`}>
+                                    <p key={item.name} onClick={handleLogin} className={`footlink-text login ${userLogin === true && 'logout'}`}>
                                         <span onClick={toggleIconClose}>{`${userLogin === false ? 'Login' : 'Logout'}`}</span>
                                     </p>
                                     :
@@ -45,7 +45,7 @@ function Footer({toggleIconClose, setLogin, userLogin}) {
         </div>
         <div className='ft-bottom'>
             <div className='ft-line'></div>
-            <p className='ftb-text'>©️ Copyright Little Lemon, 2024</p>
+            <p className='ftb-text'>Copyright ©️ 2024 Little Lemon</p>
             <p className='ftb-text'>Created by Joshua Oseghale</p>
             <p className='ftb-text'>Social Media Links</p>
         </div>

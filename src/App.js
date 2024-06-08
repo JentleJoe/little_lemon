@@ -5,11 +5,12 @@ import { Navbar, Hero, Specials, Testimonials, About, Footer, Login, Promotion, 
 function App() {
 
   const [navBg, setNavBg] = useState('')
+  // login component hide/show state
   const [login, setLogin] = useState(false)
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [scrollDirection, setScrollDirection] = useState("")
   const [hamIcon, setHamIcon] = useState('hamburger')
-  // Login State
+  // Login and Logout Text State
   const [userLogin, setUserLogin] = useState(false)
 
   // Handle Nav display on scroll direction
@@ -51,11 +52,24 @@ function App() {
   }
   const handleLogin = () => {
     if (userLogin === true){
+      // changes Logout button to Login button
       setUserLogin((prevState) => !prevState)
       // Add log out prompt to alert user that they're logged out
     }
     else{
-      setLogin(prev => !prev)
+      // opens login component
+      setLogin((prevState) => !prevState)
+      // Add log in prompt
+    }
+  }
+  const handleSetUserLogin = () => {
+    if (userLogin === true){
+      setUserLogin((prevState) => !prevState)
+      // Add log out prompt to alert user that they're logged out
+    }
+    else{
+      setUserLogin((prevState) => !prevState)
+      // Add log in prompt
     }
   }
 
@@ -73,20 +87,20 @@ function App() {
   return (
     <>
       <header className={`${navBg} ${scrollDirection}`}>
-        {/* <Navbar toggleIcon={toggleIcon} hamIcon={hamIcon} toggleIconClose={toggleIconClose} setLogin={handleLogin}
-         navBg={navBg} scrollDirection={scrollDirection} userLogin={userLogin} setUserLogin={handleLogin} /> */}
+        <Navbar toggleIcon={toggleIcon} hamIcon={hamIcon} toggleIconClose={toggleIconClose} handleLogin={handleLogin}
+         navBg={navBg} scrollDirection={scrollDirection} userLogin={userLogin} setUserLogin={handleSetUserLogin} />
       </header>
       <main>
-        {login && <Login setLogin={triggerLogin} userLogin={userLogin} setUserLogin={handleLogin} login={login} />}
+        {login && <Login setLogin={triggerLogin} userLogin={userLogin} setUserLogin={handleSetUserLogin} login={login} />}
         <Hero toggleIconClose={toggleIconClose}/>
-        {/* <Specials toggleIconClose={toggleIconClose}/> */}
+        <Specials toggleIconClose={toggleIconClose}/>
         <Promotion toggleIconClose={toggleIconClose}/>
         <About toggleIconClose={toggleIconClose}/>
         <Testimonials />
         <Reservations toggleIconClose={toggleIconClose}/>
       </main>
       <footer>
-        <Footer userLogin={userLogin} toggleIconClose={toggleIconClose} setLogin={handleLogin}/>
+        <Footer userLogin={userLogin} toggleIconClose={toggleIconClose} handleLogin={handleLogin}/>
       </footer>
     </>
   );

@@ -217,7 +217,6 @@ a{
     /* width: 80vw; */
   }
 }
-@media(min-height: )
 
 /* SPECIALS STYLES */
 .specials-section{
@@ -246,7 +245,11 @@ a{
   padding: 0;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   /* overflow: hidden; */
+}
+.smobile-btn{
+  display: none;
 }
 
 /* SPECIALS CARD STYLES */
@@ -257,6 +260,7 @@ a{
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   overflow: hidden;
+  margin-bottom: 30px;
 }
 .cardImg-bx{
   height: 50%;
@@ -300,6 +304,22 @@ a{
 }
 .meal-order > p:hover{
   color: yellow;
+}
+
+@media(max-width: 640px){
+  .specials-content{
+    padding-bottom: 100px;
+  }
+  .card-container{
+    justify-content: center;
+  }
+  .specials-heading button{
+    display: none;
+  }
+  .smobile-btn{
+    margin-top: 40px;
+    display: block;
+  }
 }
 
 /* TESTIMONIALS SECTION */
@@ -472,7 +492,7 @@ a{
   font-family: poppins, sans-serif;
   cursor: pointer;
   border: none;
-  width: 180px;
+  /* width: 180px; */
   min-height: 50px;
   background-color: #F4CE14;
   border-radius: 10px;
@@ -555,6 +575,35 @@ a{
 .form-button:hover{
   background-color: #495E57;
   color: white;
+}
+
+@media(max-width: 720px){
+  .login-container{
+    padding: 10px;
+    /* max-width: 350px; */
+  }
+  .login-imgbx{
+    display: none;
+  }
+}
+@media(max-width: 400px){
+  .form-container{
+    padding: 30px;
+  }
+  .signup-text.zoomed, .signup.zoomed{
+    font-size: 16px;
+  }
+  .login-input.zoomed, .form-button.zoomed{
+    width: 260px;
+  }
+  @media(max-width: 360px){
+    .form-container{
+      padding: 28px;
+    }
+    .login-input.zoomed, .form-button.zoomed{
+      width: 240px;
+    }
+  }
 }
 
 /* DIALOG STYLES */
@@ -1205,6 +1254,10 @@ option{
     margin-left: -50px;
     margin-right: -50px;
   }
+  .about-section{
+    padding-right: 50px;
+    padding-left: 50px;
+  }
   .hero-content, .specials-content{
     margin-left: 50px;
     margin-right: 50px;
@@ -1232,9 +1285,16 @@ option{
   .heading-text{
     line-height: 2em;
   }
+  .close-button{
+    right: 20px;
+  }
   .reservations::before, .about-section, .promotion-section, .hero-section, .specials-section, .footer-section::before{
     margin-left: -20px;
     margin-right: -20px;
+  }
+  .about-section{
+    padding-right: 20px;
+    padding-left: 20px;
   }
   .hero-content, .specials-content{
     margin-left: 20px;

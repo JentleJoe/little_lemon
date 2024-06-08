@@ -25,7 +25,7 @@ function Specials({toggleIconClose}) {
         const handleResize = () => {
             setNumCards(calculateNumcards())
         }
-        console.log(numCards)
+        // console.log(numCards)
         window.addEventListener('resize', handleResize)
 
         return () => window.removeEventListener('resize', handleResize)
@@ -58,6 +58,9 @@ function Specials({toggleIconClose}) {
                             })
                         }
                     </div>
+                </div>
+                <div className='smobile-btn'>
+                    <Button text={"Online Menu"} />
                 </div>
             </div>
         </section>

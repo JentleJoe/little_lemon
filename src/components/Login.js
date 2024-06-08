@@ -55,14 +55,15 @@ const Login = ({setLogin, userLogin, setUserLogin, login}) => {
             if (formData.password !== formData.confirmPassword){
                 console.log("passwords\'s dont match")
                 //Give user feedback
-                return
+                // return
             }
-            console.log("passwords match")
+            else{
+                console.log("passwords match")
+            }
         }
         // Set login state to true and change nav and footer login value to logout
         // When login state is True, reservations should submit successfully
-        setUserLogin((prevState) => !prevState)
-        setLogin()
+        setUserLogin()
         handleDialog()
         // clearForm() //Already contained in handleDialog function
         // login && setLogin() //unmounts login compoment
