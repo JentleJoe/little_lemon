@@ -53,9 +53,8 @@ const Login = ({setLogin, userLogin, setUserLogin, login, handleAlert}) => {
 
         if (loginState === 'signup'){
             if (formData.password !== formData.confirmPassword){
-                console.log("passwords\'s dont match")
-                //Give user feedback
-                // return
+                handleAlert("Passwords don't match", "red") //gives Alert
+                return
             }
             else{
                 console.log("passwords match")
