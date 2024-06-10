@@ -10,7 +10,7 @@ import Login from "./Login";
 import FeedbackCard from "./FeedbackCard";
 import Promotion from "./Promotion";
 import Reservations from "./Reservations";
-import Dialog from "./Dialog";
+import Alert from "./Alert";
 
 
 export{
@@ -26,5 +26,5 @@ export{
     FeedbackCard,
     Promotion,
     Reservations,
-    Dialog
+    Alert
 }

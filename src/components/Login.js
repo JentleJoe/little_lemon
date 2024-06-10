@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import google from '../assets/img/google-icon.svg'
 import closeIcon from '../assets/img/close-icon.svg'
 import hamburger from '../assets/img/hamburger-img.png'
-import Dialog from './Dialog'
+import Alert from './Alert'
 import { dialogBox } from '../constants'
 
-const Login = ({setLogin, userLogin, setUserLogin, login}) => {
+const Login = ({setLogin, userLogin, setUserLogin, login, handleAlert}) => {
 
     const [loginState, setLoginState] = useState('login')
     const [zoomed, setZoomed] = useState(false)
@@ -28,10 +28,10 @@ const Login = ({setLogin, userLogin, setUserLogin, login}) => {
     }
 
     const handleDialog = () => {
-        !showDialog && setShowDialog((prev) => !prev) //displays dialog
+        !showDialog && setShowDialog((prev) => !prev) //displays Alert
         setDialogStyle("none") //hides login component
         setTimeout(() => {
-            setShowDialog((prev) => !prev)  //displays dialog
+            setShowDialog((prev) => !prev)  //displays Alert
             login && setLogin() //unmounts login compoment
             // clearForm() // not necessary since component already unmounted
         }, 1000);
@@ -61,12 +61,11 @@ const Login = ({setLogin, userLogin, setUserLogin, login}) => {
                 console.log("passwords match")
             }
         }
-        // Set login state to true and change nav and footer login value to logout
-        // When login state is True, reservations should submit successfully
         setUserLogin()
-        handleDialog()
-        // clearForm() //Already contained in handleDialog function
-        // login && setLogin() //unmounts login compoment
+        handleDialog() //Handles Alert Message Locally
+        //  TO HANDLE ALERT MESSAGE FROM PARENT:
+        // handleAlert(alertMessage, alertColor) //Handles Alert Message from Parent
+        // NOTE: To use you must unmount login component after its invocation
     }
 
     useEffect(() => {
@@ -87,7 +86,7 @@ const Login = ({setLogin, userLogin, setUserLogin, login}) => {
 
   return (
     <>
-    {showDialog && <Dialog text={alertMessage} color={alertColor}/>}
+    {showDialog && <Alert text={alertMessage} color={alertColor}/>}
     <div className={`login-dialog ${dialogStyle}`}>
         <div className={`login-container ${zoomed? 'zoomed' : ''}`}>
             <div className={`login-imgbx ${zoomed? 'zoomed' : ''}`}>

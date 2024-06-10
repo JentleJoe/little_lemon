@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { Navbar, Hero, Specials, Testimonials, About, Footer, Login, Promotion, Reservations, Dialog } from './components';
+import { Navbar, Hero, Specials, Testimonials, About, Footer, Login, Promotion, Reservations, Alert } from './components';
 
 function App() {
 
@@ -12,6 +12,8 @@ function App() {
   const [hamIcon, setHamIcon] = useState('hamburger')
   // Login and Logout Text State
   const [userLogin, setUserLogin] = useState(false)
+  // Alert Dialog State
+  const [alert, setAlert] = useState({showAlert: false, color: '', text: ''})
 
   // Handle Nav display on scroll direction
   useEffect(() => {
@@ -54,7 +56,7 @@ function App() {
     if (userLogin === true){
       // changes Logout button to Login button
       setUserLogin((prevState) => !prevState)
-      // Add log out prompt to alert user that they're logged out
+      handleAlert("Logged Out", "red") //Displays Alert
     }
     else{
       // opens login component
@@ -84,20 +86,52 @@ function App() {
     }
   }
 
+  // Alert Handler
+  // USAGE: Pass handleAlert to component
+  //  - Trigger handleAlert passing color and text as parameter
+  //  - handleAlert automatically displays alert and unmounts it
+  const handleAlert = (text, color) => {
+    if (alert.showAlert){
+      // Means Alert is currently been diplayed, Returns to default OFF
+      setAlert(() => ({
+        showAlert: false,
+        color: '',
+        text: ''
+      }))
+    }
+    else //Shows Alert for x seconds and toggles it OFF
+    {
+      setAlert((prev) => ({
+        ...prev,
+        showAlert: !alert.showAlert,
+        color: color,
+        text: text
+      }))
+      setTimeout(()=>{
+        setAlert((prev) => ({
+          showAlert: false,
+          color: '',
+          text: ''
+        }))
+      }, 1000)
+    }
+  }
+
   return (
     <>
+    {alert.showAlert && <Alert text={alert.text} color={alert.color} />}
       <header className={`${navBg} ${scrollDirection}`}>
         <Navbar toggleIcon={toggleIcon} hamIcon={hamIcon} toggleIconClose={toggleIconClose} handleLogin={handleLogin}
          navBg={navBg} scrollDirection={scrollDirection} userLogin={userLogin} setUserLogin={handleSetUserLogin} />
       </header>
       <main>
-        {login && <Login setLogin={triggerLogin} userLogin={userLogin} setUserLogin={handleSetUserLogin} login={login} />}
+        {login && <Login setLogin={triggerLogin} userLogin={userLogin} setUserLogin={handleSetUserLogin} login={login} handleAlert={handleAlert} />}
         <Hero toggleIconClose={toggleIconClose}/>
         <Specials toggleIconClose={toggleIconClose}/>
         <Promotion toggleIconClose={toggleIconClose}/>
         <About toggleIconClose={toggleIconClose}/>
         <Testimonials />
-        <Reservations toggleIconClose={toggleIconClose}/>
+        <Reservations handleAlert={handleAlert} toggleIconClose={toggleIconClose}/>
       </main>
       <footer>
         <Footer userLogin={userLogin} toggleIconClose={toggleIconClose} handleLogin={handleLogin}/>

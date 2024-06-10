@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Dialog = ({text, color}) => {
+const Alert = ({text, color}) => {
   return (
     <div className='dialogbx-container'>
         <div className={`dialogbx ${color}`}>{text}</div>
@@ -8,4 +8,4 @@ const Dialog = ({text, color}) => {
   )
 }
 
-export default Dialog
+export default Alert

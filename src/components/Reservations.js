@@ -1,10 +1,10 @@
 import React from 'react'
 import Button from './Button'
 import { useState } from 'react'
-import Dialog from './Dialog'
+import Alert from './Alert'
 import { dialogBox } from '../constants'
 
-const Reservations = ({toggleIconClose}) => {
+const Reservations = ({toggleIconClose, handleAlert}) => {
 
     const [formData, setFormData] = useState({})
     const [showDialog, setShowDialog] = useState(false)
@@ -50,7 +50,7 @@ const Reservations = ({toggleIconClose}) => {
     }
 
     const handleDialog = () => {
-        !showDialog && setShowDialog((prev) => !prev) //displays dialog
+        !showDialog && setShowDialog((prev) => !prev) //displays Alert
         // show order summary
         // unmount order summary componnt on button click
         setTimeout(() => {
@@ -70,13 +70,14 @@ const Reservations = ({toggleIconClose}) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(formData)
-        handleDialog()
+        // handleDialog() //Handles Alert message locally
+        handleAlert(alertMessage, alertColor) //Handles Alert Message from Parent
         // Submit form to API
     }
 
   return (
     <>
-    {showDialog && <Dialog text={alertMessage} color={alertColor}/>}
+    {showDialog && <Alert text={alertMessage} color={alertColor}/>}
     <section className='reservations' id='reservations'>
         <h2>Book A Table</h2>
         <div className='rsrv-container'>
