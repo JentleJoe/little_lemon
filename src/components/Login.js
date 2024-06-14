@@ -56,7 +56,7 @@ const Login = ({setLogin, userLogin, setUserLogin, login, handleAlert}) => {
                 handleAlert("Passwords don't match", "red") //gives Alert
                 return
             }
-            else{
+            else {
                 console.log("passwords match")
             }
         }
@@ -99,7 +99,7 @@ const Login = ({setLogin, userLogin, setUserLogin, login, handleAlert}) => {
                      name='email' type='email' required value={formData.email} />
                     <label htmlFor='password'>Password</label>
                     <input onChange={handleChange} id='password' className={`login-input ${zoomed? 'zoomed' : ''}`}
-                     name='password' type='password' min={8} value={formData.password} required />
+                     name='password' type='password' minLength={8} value={formData.password} required />
                     <div className='forgetpwd-bx'>
                         {loginState === 'login' && <p className='forgetpwd'>Forgot Password?</p>}
                     </div>
@@ -108,7 +108,7 @@ const Login = ({setLogin, userLogin, setUserLogin, login, handleAlert}) => {
                         <>
                             <label htmlFor='confirmPassword' className='confirmpwd'>Confirm Password</label>
                             <input onChange={handleChange} id='confirmPassword' className={`login-input ${zoomed? 'zoomed' : ''}`}
-                             name='confirmPassword' type='password' value={formData.confirmPassword} min={8} required />
+                             name='confirmPassword' type='password' value={formData.confirmPassword} minLength={8} required />
                         </>
                     }
                     <button className={`form-button ${zoomed? 'zoomed' : ''}`} type='submit'>
