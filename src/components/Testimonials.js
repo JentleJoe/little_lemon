@@ -10,7 +10,7 @@ function Testimonials() {
       {
         userReview.map((user, index) => {
           return(
-          <FeedbackCard key={index} img={user.img} date={user.date}
+          <FeedbackCard title="review-cards" key={index} img={user.img} date={user.date}
           review={user.review} name={user.name} bio={user.bio} />
         )})
       }

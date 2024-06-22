@@ -1,9 +1,9 @@
 import React from 'react'
 import star from '../assets/img/5-Star.png'
 
-const FeedbackCard = ({img, date, review, name, bio}) => {
+const FeedbackCard = ({img, date, review, name, bio, title}) => {
   return (
-    <div className='fb-card'>
+    <div title={title} className='fb-card'>
         <div className='fb-header'>
             <div className='star-imgbx'>
                 <img src={star} className='star' width={"100"}/>

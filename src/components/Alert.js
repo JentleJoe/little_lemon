@@ -2,7 +2,7 @@ import React from 'react'
 
 const Alert = ({text, color}) => {
   return (
-    <div className='dialogbx-container'>
+    <div title='alertbox' className='dialogbx-container'>
         <div className={`dialogbx ${color}`}>{text}</div>
     </div>
   )
