@@ -1053,6 +1053,9 @@ option{
   color: whitesmoke;
   margin-bottom: 10px;
 }
+.social-margin{
+  margin-right: 24px;
+}
 
 @media(min-width: 1200px){
   .footer-imgbx{

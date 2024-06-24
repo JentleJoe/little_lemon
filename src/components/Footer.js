@@ -1,6 +1,5 @@
 import React from 'react'
-import {footerLinks} from '../constants'
-import restaurant from '../assets/img/restauranfood.jpg'
+import {footerLinks, socialMedia} from '../constants'
 import hamburger from '../assets/img/hamburger-img.png'
 
 function Footer({toggleIconClose, handleLogin, userLogin}) {
@@ -26,7 +25,8 @@ function Footer({toggleIconClose, handleLogin, userLogin}) {
                             content.links.map((item, index) => {
                                 return(
                                     item.name === 'Login' ?
-                                    <p key={item.name} onClick={handleLogin} className={`footlink-text login ${userLogin === true && 'logout'}`}>
+                                    <p key={item.name} onClick={handleLogin}
+                                    className={`footlink-text login ${userLogin === true && 'logout'}`}>
                                         <span onClick={toggleIconClose}>{`${userLogin === false ? 'Login' : 'Logout'}`}</span>
                                     </p>
                                     :
@@ -47,7 +47,16 @@ function Footer({toggleIconClose, handleLogin, userLogin}) {
             <div className='ft-line'></div>
             <p className='ftb-text'>Copyright ©️ 2024 Little Lemon</p>
             <p className='ftb-text'>Created by Joshua Oseghale</p>
-            <p className='ftb-text'>Social Media Links</p>
+            {
+                socialMedia.map((socials, index) => {
+                    return(
+                      <a href={socials.link} key={socials.id} target="_blank"
+                      className={`${index != socialMedia.length - 1 ? "social-margin" : ""}`} >
+                        <img width={24} className="w-[24px]" src={socials.icon}  />
+                      </a>
+                    )
+                  })
+            }
         </div>
     </section>
   )

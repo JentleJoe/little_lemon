@@ -2,6 +2,7 @@ import greekSalad from '../assets/img/greek salad.jpg'
 import user1 from '../assets/img/user1.png'
 import people from '../assets/img/people03.png'
 import user2 from '../assets/img/user2.png'
+import { facebook, twitter, linkedin, instagram, github } from '../assets/img/index'
 
 import bruchetta from '../assets/img/bruchetta.svg'
 import lemonDessert from '../assets/img/lemon dessert.jpg'
@@ -96,6 +97,29 @@ export const footerLinks = [
           link: "https://www.facebook.com/aigbokhaebholo.joshua",
       }
     ],
+  },
+];
+
+export const socialMedia = [
+  {
+    id: "social-media-1",
+    icon: github,
+    link: "https://github.com/JentleJoe",
+  },
+  {
+    id: "social-media-2",
+    icon: facebook,
+    link: "https://www.facebook.com/aigbokhaebholo.joshua",
+  },
+  {
+    id: "social-media-3",
+    icon: twitter,
+    link: "https://www.twitter.com/Code_Chart",
+  },
+  {
+    id: "social-media-4",
+    icon: linkedin,
+    link: "https://www.linkedin.com/in/joshua-oseghale",
   },
 ];
 

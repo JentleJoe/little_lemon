@@ -1,30 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from './Button'
 import { useState } from 'react'
 import Alert from './Alert'
 import { dialogBox } from '../constants'
+import { fetchAPI, submitAPI } from '../constants/apiCalls'
 
 const Reservations = ({toggleIconClose, handleAlert}) => {
 
     const [formData, setFormData] = useState({})
     const [showDialog, setShowDialog] = useState(false)
+    const [availableTimes, setAvailableTimes] = useState([])
 
     const alertMessage = dialogBox.bookingSuccess.text
     const alertColor = dialogBox.bookingSuccess.color
+
+    // useEffect(() => {
+    //     if(window.submitAPI){
+    //         console.log("API exists")
+    //     }
+    //     else{
+    //         console.log("API was not fetched")
+    //     }
+    //   }, [])
 
     // SELECT STATE MANAGEMENT
     const selectedOccassion = [
         { value: 'birthday', label: 'Birthday' },
         { value: 'engagement', label: 'Engagement' },
         { value: 'anniversry', label: 'Anniversary' }
-    ]
-    const selectedTime = [
-        {value: "8:00", label: "8:00"},
-        {value: "10:00", label: "10:00"},
-        {value: "12:00", label: "12:00"},
-        {value: "14:00", label: "14:00"},
-        {value: "16:00", label: "16:00"},
-        {value: "18:00", label: "18:00"}
     ]
     const selectedNumber = [
         {value: "2",  label: "2 people"},
@@ -36,6 +39,13 @@ const Reservations = ({toggleIconClose, handleAlert}) => {
         {value: "indoor", label: "Indoor"},
         {value: "Outdoor", label: "Outdoor"}
     ]
+
+    const handleSelectedDate = (e) => {
+        const selectedDate = e.target.value
+        submitAPI(selectedDate)
+        setAvailableTimes(fetchAPI(selectedDate))
+        handleChange(e)
+    }
 
     const handleChange = (e) => {
         const {name, value} = e.target
@@ -71,7 +81,13 @@ const Reservations = ({toggleIconClose, handleAlert}) => {
         e.preventDefault()
         console.log(formData)
         // handleDialog() //Handles Alert message locally
-        handleAlert(alertMessage, alertColor) //Handles Alert Message from Parent
+        if (submitAPI(formData)){
+            handleAlert(alertMessage, alertColor) //successful
+        }
+        else{
+            handleAlert("Error booking table", "red") //error
+        }
+         //Handles Alert Message from Parent
         // Submit form to API
     }
 
@@ -101,17 +117,17 @@ const Reservations = ({toggleIconClose, handleAlert}) => {
                     </div>
                     <div className='rsv-input'>
                         <label htmlFor='date'>Select Date</label>
-                        <input type='date' id='date' name='date' required onChange={handleChange}/>
+                        <input type='date' id='date' name='date' required onChange={handleSelectedDate}/>
                     </div>
                     <div className='rsv-input'>
                         <label htmlFor='time'>Select Time</label>
                         <select name='time' onChange={handleChange} id='time' required>
                             <option value="">Select Time</option>
                             {
-                                selectedTime.map((occassion) => {
+                                availableTimes.map((time) => {
                                     return(
-                                        <option key={occassion.value} value={occassion.value}>
-                                            {occassion.label}
+                                        <option key={time} value={time}>
+                                            {time}
                                         </option>
                                     )
                                 })
