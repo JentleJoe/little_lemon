@@ -85,7 +85,7 @@ a{
   color: red;
 }
 
-#button{
+button{
   font-family: poppins, sans-serif;
   cursor: pointer;
   border: none;
@@ -96,7 +96,7 @@ a{
   font-size: 18px;
   font-weight: 500;
 }
-#button:hover{
+button:hover{
   background-color: #495E57;
   color: white;
 }
@@ -122,6 +122,7 @@ a{
   background-image: url(./assets/img/bg-header.png);
   background-attachment: fixed;
   background-size: cover;
+  max-height: 100vh;
 }
 
 .hero-section, .about-section{
@@ -150,19 +151,22 @@ a{
   margin: 0;
   font-size: 56px;
   font-weight: 400;
-  /* margin-bottom: 80px; */
+  margin-bottom: 120px;
 }
 .heading-text{
   font-size: 24px;
-  width: 500px;
-  /* margin-bottom: 115px; */
+  max-width: 500px;
+  margin-bottom: 120px;
+}
+.hero-button{
+  padding-bottom: 50px;
 }
 @media(min-width: 1650px){
   .sub-heading{
-    padding-bottom: 80px;
+    /* padding-bottom: 80px; */
   }
   .heading-text{
-    padding-bottom: 80px;
+    /* padding-bottom: 80px; */
   }
 }
 @media(max-width: 1024px){
@@ -192,7 +196,7 @@ a{
 }
 @media(max-width: 560px){
   .hero-content{
-    padding-bottom: 60px;
+    padding-bottom: 50px;
     padding-top: 70px;
   }
   .heading{
@@ -200,21 +204,30 @@ a{
   }
   .sub-heading{
     font-size: 40px;
+    margin-bottom: 80px;
   }
   .heading-text{
-    font-size: 20px;
+    font-size: 18px;
     max-width: 65vw;
+    margin-bottom: 80px;
   }
 }
 @media(max-width: 480px){
+  .hero-section{
+    height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
   .heading{
     font-size: 42px;
   }
   .sub-heading{
+    margin-bottom: 40px;
     font-size: 32px;
   }
   .heading-text{
-    /* width: 80vw; */
+    font-size: 14px;
+    margin-bottom: 40px;
   }
 }
 
@@ -475,7 +488,6 @@ a{
   font-size: 1.5em;
 }
 .signup-text, .signup{
-  margin-bottom: 10px;
   font-size: xx-small;
   transition: font-size 0.5s ease-out 0.3s;
 }
@@ -506,6 +518,7 @@ a{
 }
 
 .login-input, .form-button{
+  outline: none;
   padding: 5px;
   color: black;
   font-family: poppins;
@@ -586,20 +599,47 @@ a{
     display: none;
   }
 }
-@media(max-width: 400px){
-  .form-container{
-    padding: 30px;
+@media(max-width: 480px){
+  .login-container{
+    background-color: transparent;
+    backdrop-filter: blur(0);
+    border: 0;
+    padding: 0;
   }
-  .signup-text.zoomed, .signup.zoomed{
-    font-size: 16px;
+  .login-dialog{
+    background-color: rgba(0, 0, 0, 0.9);
   }
   .login-input.zoomed, .form-button.zoomed{
-    width: 260px;
+    max-width: 240px;
+    height: 40px;
+    margin-bottom: 12px;
+  }
+  .form-button{
+    margin-top: 12px;
+  }
+  .confirmpwd{
+    margin-top: 12px;
+  }
+  .optional-text.zoomed{
+    font-size: 14px;
+  }
+  .login-text.zoomed{
+    font-size: 20px;
+  }
+  .google-icon.zoomed{
+    margin-bottom: 12px;
+    width: 24px;
+  }
+  form label{
+    font-size: 14px;
+  }
+  .form-container{
+    padding: 15px 25px;
+  }
+  .signup-text.zoomed, .signup.zoomed{
+    font-size: 12px;
   }
   @media(max-width: 360px){
-    .form-container{
-      padding: 28px;
-    }
     .login-input.zoomed, .form-button.zoomed{
       width: 240px;
     }
@@ -1081,7 +1121,7 @@ option{
     background-size: 1650px cover; /* width height */
     background-position: top;
     /* height: min(100vh, 800px); */
-    height: 100vh;
+    /* max-height: 100vh; */
   }
 }
 @media(max-width: 1440px){
@@ -1285,11 +1325,9 @@ option{
     padding-right: 20px;
     padding-left: 20px;
   }
-  .heading-text{
-    line-height: 2em;
-  }
   .close-button{
-    right: 20px;
+    top: 10px;
+    right: 10px;
   }
   .reservations::before, .about-section, .promotion-section, .hero-section, .specials-section, .footer-section::before{
     margin-left: -20px;

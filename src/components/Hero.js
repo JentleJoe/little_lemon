@@ -13,7 +13,7 @@ function Hero({toggleIconClose}) {
               Little Lemon restaurant has a rustic and relaxed atmosphere with
               moderate prices, making it a popular place for a meal any time of the day.
             </p>
-            <a href='#reservations'>
+            <a href='#reservations' className='hero-button'>
               <Button text="Reserve Table"/>
             </a>
         </div>
