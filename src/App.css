@@ -239,12 +239,12 @@ button:hover{
 }
 .specials-content{
   padding-top: 80px;
-  padding-bottom: 130px;
+  padding-bottom: 80px;
   margin-left: 150px;
   margin-right: 150px;
 }
 .specials-heading{
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
   /* align-items: top; */
@@ -257,8 +257,7 @@ button:hover{
 .card-container{
   padding: 0;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  /* justify-content: space-between; */
   /* overflow: hidden; */
 }
 .smobile-btn{
@@ -269,11 +268,10 @@ button:hover{
 .card{
   position: relative;
   height: 450px;
-  max-width: 300px;
+  /* max-width: 300px; */
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   overflow: hidden;
-  margin-bottom: 30px;
 }
 .cardImg-bx{
   height: 50%;
@@ -320,8 +318,12 @@ button:hover{
 }
 
 @media(max-width: 640px){
+  .card{
+    max-width: 300px;
+    margin-inline: auto;
+  }
   .specials-content{
-    padding-bottom: 100px;
+    padding-top: 60px;
   }
   .card-container{
     justify-content: center;
@@ -334,10 +336,36 @@ button:hover{
     display: block;
   }
 }
+@media(min-width: 640px){
+  .card{
+    margin-inline: 10px;
+  }
+}
+  @media(min-width: 768px){
+    .card{
+      margin-inline: 20px;
+    }
+}
+@media(min-width: 1024px){
+  .card{
+    margin-inline: 30px;
+  }
+}
+@media(min-width: 1100px){
+  .card{
+    margin-inline: 10px;
+  }
+}
+@media(min-width: 1400px){
+  .card{
+    margin-inline: 20px;
+  }
+}
 
-/* TESTIMONIALS SECTION */
-.testimonials-section{
-  /* height: 100vh; */
+/* SPECIALS CAROUSEL */
+
+.specials-carousel{
+  margin-bottom: 100px;
 }
 
 /* ABOUT SECTION */
