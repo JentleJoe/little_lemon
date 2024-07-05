@@ -4,7 +4,6 @@ import Card from './Card'
 import { cardInfo } from '../constants'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
-import GreekSalad from '../assets/img/greek salad.jpg'
 
 function Specials({toggleIconClose}) {
 

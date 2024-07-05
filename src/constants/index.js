@@ -1,11 +1,12 @@
-import greekSalad from '../assets/img/greek salad.jpg'
+import greekSalad from '../assets/img/greek salad.png'
 import user1 from '../assets/img/user1.png'
 import people from '../assets/img/people03.png'
 import user2 from '../assets/img/user2.png'
 import { facebook, twitter, linkedin, instagram, github } from '../assets/img/index'
-
-import bruchetta from '../assets/img/bruchetta.svg'
-import lemonDessert from '../assets/img/lemon dessert.jpg'
+import bruchetta from '../assets/img/bruchetta.png'
+import lemonDessert from '../assets/img/lemon dessert.png'
+import lemonade_cupcake from '../assets/img/lemonade cupcake.jpg'
+import tomato_bruschetta from '../assets/img/tomato bruschetta.jpeg'
 
 export const cardInfo = [
     {
@@ -26,12 +27,28 @@ export const cardInfo = [
     },
     {
         img: lemonDessert,
-        meal: 'Lemon Dessert',
+        meal: 'Dessert Cake',
         price: "$12.99",
         details: `Indulge in our exquisite Lemon Dessert, a heavenly
         blend of zesty lemon curd layered between light sponge cake,
         topped with a velvety lemon cream and a sprinkle of citrus zest.`
-    }
+    },
+    {
+      img: tomato_bruschetta,
+      meal: 'Tomato Bruschetta',
+      price: "$12.99",
+      details: `Our Bruschetta is made from grilled bread that has been
+      smeared with garlic and topped with a flavorful medley of diced
+      tomatoes, fresh basil, and a hint of balsamic glaze.`
+  },
+  {
+    img: lemonade_cupcake,
+    meal: 'Lemonade Cupcake',
+    price: "$12.99",
+    details: `Indulge in our exquisite Lemon Dessert, a heavenly
+    blend of zesty lemon curd layered between light sponge cake,
+    topped with a velvety lemon cream and a sprinkle of citrus zest.`
+}
 ]
 
 export const footerLinks = [

@@ -1,5 +1,4 @@
 import React from 'react'
-import GreekSalad from '../assets/img/greek salad.jpg'
 
 function Card({img, meal, price, details, }) {
   return (
