@@ -1047,10 +1047,15 @@ option{
   .open-details{
     max-width: 100%;
   }
-  .open-text{
+  .open-text, .open-days{
     font-size: 16px;
   }
 }
+/* @media(max-width: 480px){
+  .open-text{
+    font-size: 14px;
+  }
+} */
 
 /* FOOTER STYLES */
 .footer-section{
