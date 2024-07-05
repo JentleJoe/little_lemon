@@ -1050,6 +1050,9 @@ option{
   .open-text, .open-days .day, .open-days .time{
     font-size: 16px;
   }
+  .open-head{
+    font-size: 24px;
+  }
 }
 @media(max-width: 480px){
   .open-text, .open-days .day, .open-days .time{
