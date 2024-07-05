@@ -991,7 +991,7 @@ option{
   border-bottom: 1px solid white;
   padding-bottom: 5px;
 }
-.day, .time{
+.open-days .day, .open-days .time{
   font-family: 'Times New Roman', Times, serif;
   font-size: 20px;
 }
@@ -1047,7 +1047,7 @@ option{
   .open-details{
     max-width: 100%;
   }
-  .open-text, .open-days{
+  .open-text, .open-days .day, .open-days .time{
     font-size: 16px;
   }
 }
