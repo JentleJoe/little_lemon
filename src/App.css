@@ -1047,6 +1047,9 @@ option{
   .open-details{
     max-width: 100%;
   }
+  .open-text{
+    font-size: 16px;
+  }
 }
 
 /* FOOTER STYLES */
