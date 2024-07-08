@@ -35,7 +35,7 @@ function Testimonials() {
         userReview.map((user, index) => {
           return(
           <FeedbackCard title="review-cards" key={index} img={user.img} date={user.date}
-          review={user.review} name={user.name} bio={user.bio} />
+          review={user.review} name={user.name} bio={user.bio} style={user.name === 'Precious Ndukwu' ? 'smalltext' : ''} />
         )})
       }
       </Carousel>

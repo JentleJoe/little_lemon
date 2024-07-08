@@ -152,12 +152,12 @@ export const userReview = [
   },
   {
     img: user2,
-    date: "7th January, 2024",
+    date: "8th July, 2024",
     review: `Little Lemon is my new favorite spot in Chicago!
     The ambiance, the service, and, most importantly, the food
     exceeded my expectations. Highly recommend!`,
-      name: "Blessing Eghwere",
-      bio: "Digital Fashion Designer"
+      name: "Precious Ndukwu",
+      bio: "Digital Marketer | Fashion Model Manager"
   },
   {
     img: people,
@@ -168,6 +168,15 @@ export const userReview = [
       name: "David",
       bio: "Data Analyst"
   },
+  // {
+  //   img: user2,
+  //   date: "7th January, 2024",
+  //   review: `Little Lemon is my new favorite spot in Chicago!
+  //   The ambiance, the service, and, most importantly, the food
+  //   exceeded my expectations. Highly recommend!`,
+  //     name: "Blessing Eghwere",
+  //     bio: "Digital Fashion Designer"
+  // }
 ]
 
 export const dialogBox = {

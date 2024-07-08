@@ -782,6 +782,9 @@ button:hover{
 .fbname{
   font-weight: 700;
 }
+.fbabout.smalltext{
+  font-size: 12px;
+}
 .star-imgbx{
   margin-right: 10px;
 }

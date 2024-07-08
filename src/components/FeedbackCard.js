@@ -1,7 +1,7 @@
 import React from 'react'
 import star from '../assets/img/5-Star.png'
 
-const FeedbackCard = ({img, date, review, name, bio, title}) => {
+const FeedbackCard = ({img, date, review, name, bio, title, style}) => {
   return (
     <div title={title} className='fb-card'>
         <div className='fb-header'>
@@ -17,7 +17,7 @@ const FeedbackCard = ({img, date, review, name, bio, title}) => {
             </div>
             <div className='user-details'>
                 <div className='fbname'>{name}</div>
-                <div className='fbabout'>{bio}</div>
+                <div className={`fbabout ${style}`}>{bio}</div>
             </div>
         </div>
     </div>
