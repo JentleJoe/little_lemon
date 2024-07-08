@@ -1081,7 +1081,7 @@ option{
   right: 0;
   bottom: 0;
   left: 0;
-  filter: brightness(0.05);
+  filter: brightness(0.2);
   z-index: -1;
 }
 .footer-content{
