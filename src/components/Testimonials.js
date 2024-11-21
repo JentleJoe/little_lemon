@@ -24,21 +24,23 @@ function Testimonials() {
   return (
     <section className='testimonials-section'>
       <h2>Testimonials</h2>
-      <Carousel responsive={responsive}
-      infinite={true}
-      autoPlay={true}
-      autoPlaySpeed={3000}
-      containerClass="fbcards-carousel"
-      removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
-      >
-      {
-        userReview.map((user, index) => {
-          return(
-          <FeedbackCard title="review-cards" key={index} img={user.img} date={user.date}
-          review={user.review} name={user.name} bio={user.bio} style={user.name === 'Precious Ndukwu' ? 'smalltext' : ''} />
-        )})
-      }
-      </Carousel>
+      <div className='testimonials'>
+        <Carousel responsive={responsive}
+        infinite={true}
+        autoPlay={true}
+        autoPlaySpeed={3000}
+        containerClass="fbcards-carousel"
+        removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+        >
+        {
+          userReview.map((user, index) => {
+            return(
+            <FeedbackCard title="review-cards" key={index} img={user.img} date={user.date}
+            review={user.review} name={user.name} bio={user.bio} style={user.name === 'Precious Ndukwu' ? 'smalltext' : ''} />
+          )})
+        }
+        </Carousel>
+      </div>
       {/* <div className='fbcards-container'>
       {
         userReview.map((user, index) => {

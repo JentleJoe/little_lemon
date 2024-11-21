@@ -22,11 +22,13 @@ function About({toggleIconClose}) {
             additional cuisines from the Mediterranean region.
           </p>
         </div>
-        <div className='aboutimg-container'>
+        <div className='aboutimg-container autoshow'>
           <img className='restaurant-img' width={"100%"} height={"100%"} src={restaurant}></img>
         </div>
       </div>
-      <a href='#home'><Button text={"Learn More"} /></a>
+      <div className='about-button'>
+        <a href='#home'><Button text={"Learn More"} /></a>
+      </div>
     </section>
   )
 }

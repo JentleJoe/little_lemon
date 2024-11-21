@@ -10,7 +10,7 @@
 body{
   /* display: flex; */
   /* justify-content: center; */
-  max-width: 1650px;
+  /* max-width: 1650px; */
   overflow-x: hidden;
   margin-left: auto;
   margin-right: auto;
@@ -23,6 +23,10 @@ body{
   padding-left: 150px;
   color: white;
 }
+
+/* main{
+  max-width: 1650px;
+} */
 
 /* NAVBAR STYLES */
 .navbar{
@@ -125,6 +129,7 @@ button:hover{
   max-height: 100vh;
 }
 
+
 .hero-section, .about-section{
   margin-left: -150px;
   margin-right: -150px;
@@ -161,13 +166,22 @@ button:hover{
 .hero-button{
   padding-bottom: 50px;
 }
-@media(min-width: 1650px){
+@media(min-width: 1400px){
   .sub-heading{
     /* padding-bottom: 80px; */
   }
   .heading-text{
     /* padding-bottom: 80px; */
   }
+
+ .hero-content, .specials-content, .promo-details, .about-content, .rsrv-container, .footer-content, .ft-bottom, .about-button, .testimonials{
+  max-width: 1340px !important;
+  width: 100%;
+  margin-inline: auto !important;
+  /* border: 1px solid white; */
+  /* margin-right: auto;
+  margin-left: auto; */
+ }
 }
 @media(max-width: 1024px){
   .hero-content{
@@ -723,7 +737,8 @@ button:hover{
   color: white;
   font-family: poppins, sans-serif;
   /* width: 380px; */
-  background-color: black;
+  /* background-color: black; */
+  background-color: #495E57;
   border-radius: 10px;
   margin-inline: auto;
   max-width: 400px;
@@ -1441,5 +1456,23 @@ option{
   }
   .footerlink-bx.lg{
     margin-right: 0;
+  }
+}
+
+
+
+/* ANIMATION */
+.autoshow{
+  animation: autoShowAnimation both;
+  animation-timeline: view(70% 5%)
+}
+@keyframes autoShowAnimation{
+  from{
+    opacity: 0;
+    transform: translateY(100%) scale(0.3)
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0) scale(1)
   }
 }
