@@ -2,6 +2,9 @@
 
 A **feature-rich** restaurant landing page website designed to deliver a **seamless** and **engaging user experience.**
 
+## 🚀 Preview
+![LittleLemon Website Preview](https://github.com/JentleJoe/my_portfolio/blob/master/src/assets/img/littlelemon.png)
+
 ## 🚀 Key Features
 
 - **Table Reservation System:**  
